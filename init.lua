@@ -1,2 +1,11 @@
+local set = vim.opt
 require("elias")
-vim.opt.clipboard = "unnamedplus"
+set.clipboard = "unnamedplus"
+set.number = true
+set.hidden = true
+set.incsearch = true
+
+
+
+
+
