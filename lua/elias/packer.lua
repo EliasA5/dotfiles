@@ -18,7 +18,6 @@ return require('packer').startup(function(use)
   }
   use 'nvim-treesitter/playground'
   use 'mbbill/undotree'
-  -- use 'tpope/vim-fugitive'
   use { 'sindrets/diffview.nvim', requires = 'nvim-lua/plenary.nvim' }
   use 'christoomey/vim-tmux-navigator'
   use 'szw/vim-maximizer'

@@ -4,7 +4,7 @@ local view = require("iron.view")
 iron.setup {
     config = {
         -- Whether a repl should be discarded or not
-        sCRatch_repl = false,
+        scratch_repl = false,
         -- Your repl definitions come here
         repl_definition = {
             sh = {
@@ -28,7 +28,7 @@ iron.setup {
     -- Iron doesn't set keymaps by default anymore.
     -- You can set them here or manually add keymaps to the functions in iron.core
     keymaps = {
-        send_motion = "<leader>ss",
+        -- send_motion = "<leader>ss",
         visual_send = "<leader>ss",
         send_file = "<leader>sf",
         send_line = "<leader>sl",
@@ -51,7 +51,8 @@ iron.setup {
 
 -- iron also has a list of commands, see :h iron-commands for all available commands
 vim.keymap.set('n', '<leader>rs', '<cmd>IronRepl<CR>')
-vim.keymap.set('n', '<leader>rr', '<cmd>IronRestart<CR><cmd>IronRepl<CR>', { silent = true} )
+-- vim.keymap.set('n', '<leader>rr', '<cmd>IronClose<CR>')
+--<cmd>IronRepl<CR>', { silent = true} )
 -- vim.keymap.set('n', '<leader>rf', '<cmd>IronFocus<CR>')
 -- vim.keymap.set('n', '<leader>rh', '<cmd>IronHide<CR>')
 
