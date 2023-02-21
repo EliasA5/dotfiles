@@ -46,6 +46,12 @@ return require('packer').startup(function(use)
   }    
   use 'voldikss/vim-floaterm'
   use {'hkupty/iron.nvim'}
+  use {
+      'lewis6991/gitsigns.nvim',
+      -- tag = 'release' -- To use the latest release (do not use this if you run Neovim nightly or dev builds!)
+  }
+  use 'nvim-tree/nvim-web-devicons'
+  use 'feline-nvim/feline.nvim'
 
 end)
 

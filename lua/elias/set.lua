@@ -16,7 +16,7 @@ set.smartindent = true
 set.termguicolors = true
 
 set.scrolloff = 8
-set.signcolumn = "number"
+-- set.signcolumn = "number"
 
 set.hidden = true
 set.incsearch = true
