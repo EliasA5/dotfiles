@@ -22,6 +22,8 @@ vim.keymap.set("n", "<leader>s", [[:.,$s/\<<C-r><C-w>\>//gcI<Left><Left><Left><L
 
 vim.keymap.set("n", "<leader>l/", ":noh<CR>", {silent = true})
 
+vim.keymap.set("n", "o", "o<Esc>")
+vim.keymap.set("n", "O", "O<Esc>")
 
 
 
