@@ -12,8 +12,7 @@ Feel free to use it however you like.
 ## Installing:
 1. install Neovim
 2. install Packer
-3. clone this repository into ~/.config/nvim by using:
-
+3. clone this repository into ~/.config/nvim by using:<br>
 ```git clone https://github.com/EliasA5/vim.init ~/.config/nvim```
 
 
