@@ -1,8 +1,7 @@
 
 vim.keymap.set("n", "<leader>fs", vim.cmd.Ex)
 vim.keymap.set("n", "<leader>ft", ":NvimTreeToggle<CR><C-w>p", { silent = true })
-vim.keymap.set("n", ":", ":", { nowait = true })
-vim.keymap.set("n", ":q<CR>", ":NvimTreeClose<CR>:q<CR>", { nowait = true })
+vim.keymap.set("n", ":q<CR>", ":NvimTreeClose<CR>:q<CR>")
 
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
