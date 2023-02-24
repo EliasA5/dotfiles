@@ -21,5 +21,5 @@ set.scrolloff = 8
 set.hidden = true
 set.incsearch = true
 
-
+set.splitright = true
 
