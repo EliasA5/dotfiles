@@ -51,7 +51,7 @@ return require('packer').startup(function(use)
       -- tag = 'release' -- To use the latest release (do not use this if you run Neovim nightly or dev builds!)
   }
   use 'nvim-tree/nvim-web-devicons'
-  use 'feline-nvim/feline.nvim'
+  use 'freddiehaddad/feline.nvim'
   use 'nvim-tree/nvim-tree.lua'
 
 end)
