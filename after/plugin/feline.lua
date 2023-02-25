@@ -234,6 +234,6 @@ feline.setup({
 
 })
 
-
+feline.winbar.setup()
 
 
