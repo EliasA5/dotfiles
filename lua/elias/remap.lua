@@ -21,7 +21,7 @@ vim.keymap.set("n", "<leader>ss", [[:.,$s/\<<C-r><C-w>\>//gcI<Left><Left><Left><
 
 -- vim.keymap.set("n", "<leader><leader>", ":w<CR>:so<CR>:PackerSync<CR>")
 
-vim.keymap.set("n", "<leader>l/", ":noh<CR>", {silent = true})
+vim.keymap.set("n", "<leader>/", ":noh<CR>", {silent = true})
 
 vim.keymap.set("n", "o", "o<Esc>")
 vim.keymap.set("n", "O", "O<Esc>")
