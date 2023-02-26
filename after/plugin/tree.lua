@@ -37,6 +37,9 @@ require("nvim-tree").setup {
     },
 }
 
+local tree = require("nvim-tree.api").tree
+vim.keymap.set("n", "<leader>ft", function() tree.toggle({ focus = false }) end, { silent = true })
+
 -- local function tab_win_closed(winnr)
 --   local api = require"nvim-tree.api"
 --   local tabnr = vim.api.nvim_win_get_tabpage(winnr)
