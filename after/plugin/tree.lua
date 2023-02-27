@@ -38,7 +38,16 @@ require("nvim-tree").setup {
 }
 
 local tree = require("nvim-tree.api").tree
+
 vim.keymap.set("n", "<leader>ft", function() tree.toggle({ focus = false }) end, { silent = true })
+
+vim.api.nvim_create_autocmd({ "VimEnter" }, {
+    callback = function() tree.toggle({focus = false}) end
+})
+
+vim.api.nvim_create_autocmd({"QuitPre"}, {
+    callback = function() vim.cmd("NvimTreeClose")  end,
+})
 
 -- local function tab_win_closed(winnr)
 --   local api = require"nvim-tree.api"
