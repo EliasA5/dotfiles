@@ -46,7 +46,7 @@ vim.api.nvim_create_autocmd({ "VimEnter" }, {
 })
 
 vim.api.nvim_create_autocmd({"QuitPre"}, {
-    callback = function() vim.cmd("NvimTreeClose")  end,
+    callback = function() vim.cmd("NvimTreeClose") end,
 })
 
 -- local function tab_win_closed(winnr)
