@@ -54,6 +54,7 @@ return require('packer').startup(function(use)
   use 'freddiehaddad/feline.nvim'
   use 'nvim-tree/nvim-tree.lua'
   use 'folke/which-key.nvim' 
+  use { 'echasnovski/mini.pairs',  config = function() require('mini.pairs').setup() end }
 
 end)
 
