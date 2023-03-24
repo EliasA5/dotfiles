@@ -13,7 +13,7 @@ require("nvim-tree").setup {
     update_focused_file = {
         enable = true,
         update_root = true,
-        ignore_list = {},
+        ignore_list = { "toggleterm", "term" },
     },
     filters = { dotfiles = false },
     view = {
