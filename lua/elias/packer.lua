@@ -55,7 +55,7 @@ return require('packer').startup(function(use)
   use 'nvim-tree/nvim-tree.lua'
   use 'folke/which-key.nvim' 
   use { 'echasnovski/mini.pairs',  config = function() require('mini.pairs').setup() end }
-  use { 'echasnovski/mini.surround',  config = function() require('mini.surround').setup() end }
+  use { 'echasnovski/mini.surround'}
   use "folke/neodev.nvim"
 
 end)
