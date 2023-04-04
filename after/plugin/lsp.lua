@@ -15,3 +15,6 @@ lsp.nvim_workspace()
 
 lsp.setup()
 
+vim.keymap.set('n', '<leader>tt', '<cmd>Telescope diagnostics<CR>', { noremap = true, silent = true })
+vim.keymap.set('n', '<leader>tl', vim.diagnostic.open_float, { noremap = true, silent = true })
+
