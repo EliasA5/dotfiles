@@ -5,6 +5,10 @@ require('mini.surround').setup({
     ['['] = { input = { '%b[]', '^.().*().$' }, output = { left = '[', right = ']' } },
     ['{'] = { input = { '%b{}', '^.().*().$' }, output = { left = '{', right = '}' } },
     ['<'] = { input = { '%b<>', '^.().*().$' }, output = { left = '<', right = '>' } },
+    [')'] = { output = { left = '( ', right = ' )' } },
+    [']'] = { output = { left = '[ ', right = ' ]' } },
+    ['}'] = { output = { left = '{ ', right = ' }' } },
+    ['>'] = { output = { left = '< ', right = ' >' } },
   },
 })
 
