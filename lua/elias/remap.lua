@@ -16,7 +16,6 @@ vim.keymap.set({"n", "v"}, "<leader>d", "\"_d")
 vim.keymap.set({"n", "x"}, "x", "\"_x")
 
 vim.keymap.set("n", "<leader>ss", [[:.,$s/\<<C-r><C-w>\>//gcI<Left><Left><Left><Left>]])
---vim.keymap.set("n", "<leader>x", "<cmd>!chmod u+x %<CR>", { silent = true })
 
 -- vim.keymap.set("n", "<leader><leader>", ":w<CR>:so<CR>:PackerSync<CR>")
 
