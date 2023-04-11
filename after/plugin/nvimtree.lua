@@ -16,6 +16,7 @@ require("nvim-tree").setup {
         ignore_list = { "toggleterm", "term" },
     },
     filters = { dotfiles = false },
+    git = { enable = true, ignore = false, timeout = 500, },
     view = {
         cursorline = true,
         preserve_window_proportions = true,
