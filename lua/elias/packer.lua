@@ -21,7 +21,7 @@ return require('packer').startup(function(use)
   use { 'sindrets/diffview.nvim', requires = 'nvim-lua/plenary.nvim' }
   use 'christoomey/vim-tmux-navigator'
   use 'szw/vim-maximizer'
-  use 'tpope/vim-commentary'
+  use 'echasnovski/mini.comment'
   use {
 	  'VonHeikemen/lsp-zero.nvim',
 	  branch = 'v1.x',
