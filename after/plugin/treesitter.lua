@@ -18,4 +18,24 @@ require'nvim-treesitter.configs'.setup {
     -- Instead of true it can also be a list of languages
     additional_vim_regex_highlighting = false,
   },
+
+  textobjects = {
+      move = {
+          enable = true,
+          set_jumps = true,
+          goto_previous_start = { ["[["] = "@parameter.inner", },
+          goto_next_start = { ["]]"] = "@parameter.inner", },
+      },
+      select = {
+          enable = true,
+          lookahead = true,
+          keymaps = {
+              ["iq"] = "@parameter.inner",
+              ["aq"] = "@parameter.outer",
+          },
+      }
+  },
+
 }
+
+
