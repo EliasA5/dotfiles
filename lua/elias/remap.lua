@@ -10,9 +10,10 @@ vim.keymap.set("n", "<C-u>", "<C-u>zz")
 vim.keymap.set("n", "n", "nzzzv")
 vim.keymap.set("n", "N", "Nzzzv")
 
-vim.keymap.set("x", "<leader>p", "\"_dP")
-vim.keymap.set("n", "<leader>d", "\"_d")
-vim.keymap.set("v", "<leader>d", "\"_d")
+vim.keymap.set("x", "p", "P")
+vim.keymap.set("x", "P", "p")
+vim.keymap.set({"n", "x"}, "<leader>d", "\"_d")
+vim.keymap.set({"n", "x"}, "x", "\"_x")
 
 
 vim.keymap.set("n", "<leader>ss", [[:.,$s/\<<C-r><C-w>\>//gcI<Left><Left><Left><Left>]])
