@@ -13,7 +13,7 @@ return require('packer').startup(function(use)
 	  requires = { {'nvim-lua/plenary.nvim'} }
   }
   use 'Mofiqul/dracula.nvim'
-  use { 
+  use {
 	'nvim-treesitter/nvim-treesitter', { run = ':TSUpdate'} 
   }
   use 'nvim-treesitter/playground'
@@ -21,7 +21,6 @@ return require('packer').startup(function(use)
   use { 'sindrets/diffview.nvim', requires = 'nvim-lua/plenary.nvim' }
   use 'christoomey/vim-tmux-navigator'
   use 'szw/vim-maximizer'
-  use 'echasnovski/mini.comment'
   use {
 	  'VonHeikemen/lsp-zero.nvim',
 	  branch = 'v1.x',
@@ -54,7 +53,8 @@ return require('packer').startup(function(use)
   use 'freddiehaddad/feline.nvim'
   use 'nvim-tree/nvim-tree.lua'
   use 'folke/which-key.nvim' 
-  use { 'echasnovski/mini.pairs',  config = function() require('mini.pairs').setup() end }
+  use { 'echasnovski/mini.comment', config = function() require('mini.comment').setup() end }
+  use { 'echasnovski/mini.pairs',   config = function() require('mini.pairs').setup() end }
   use { 'echasnovski/mini.surround'}
   use "folke/neodev.nvim"
 
