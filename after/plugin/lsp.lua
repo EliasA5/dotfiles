@@ -18,4 +18,5 @@ lsp.setup()
 
 vim.keymap.set('n', '<leader>tt', '<cmd>Telescope diagnostics<CR>', { desc = "LSP Diagnostics", noremap = true, silent = true })
 vim.keymap.set('n', '<leader>tl', vim.diagnostic.open_float, { noremap = true, silent = true })
+vim.keymap.set("n", "<leader>rr", vim.lsp.buf.rename, {desc = "Rename symbol under cursor"})
 
