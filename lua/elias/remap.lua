@@ -18,15 +18,10 @@ vim.keymap.set({"n", "x"}, "x", "\"_x")
 
 vim.keymap.set("n", "<leader>ss", [[:.,$s/\<<C-r><C-w>\>//gcI<Left><Left><Left><Left>]], {desc = "Search and Replace word under cursor"})
 
--- vim.keymap.set("n", "<leader><leader>", ":w<CR>:so<CR>:PackerSync<CR>")
-
 vim.keymap.set("n", "<leader>/", ":noh<CR>", {desc = "Remove highlight", silent = true})
 
 vim.keymap.set("n", "o", "o<Esc>")
 vim.keymap.set("n", "O", "O<Esc>")
-
-vim.keymap.set("n", "<leader>b",  ":ls<CR>:b<space>", {desc = "See open buffers"})
-
 
 -- Remap for dealing with word wrap
 vim.keymap.set("n", "k", "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
