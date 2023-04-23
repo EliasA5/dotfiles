@@ -8,7 +8,7 @@ return require('packer').startup(function(use)
   use 'wbthomason/packer.nvim'
 
   use 'Mofiqul/dracula.nvim'
-  use 'echasnovski/mini.comment'
+  use { 'echasnovski/mini.comment', config = function() require('mini.comment').setup() end }
   use { 'echasnovski/mini.surround',  config = function() require('mini.surround').setup() end }
 
 end)
