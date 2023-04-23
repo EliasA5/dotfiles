@@ -3,7 +3,18 @@
 -- set termguicolors to enable highlight groups
 vim.opt.termguicolors = true
 
+
+local function on_attach(bufnr)
+  local api = require('nvim-tree.api')
+
+  local function opts(desc)
+    return { desc = 'nvim-tree: ' .. desc, buffer = bufnr, noremap = true, silent = true, nowait = true }
+  end
+
+end
+
 require("nvim-tree").setup {
+    on_attach = on_attach,
     hijack_netrw = false,
     disable_netrw = false,
     reload_on_bufenter = true,
@@ -40,7 +51,7 @@ require("nvim-tree").setup {
 
 local tree = require("nvim-tree.api").tree
 
-vim.keymap.set("n", "<leader>ft", function() tree.toggle({ focus = false }) end, { silent = true })
+vim.keymap.set("n", "<leader>ft", function() tree.toggle({ focus = false }) end, { desc = "Filetree Toggle", silent = true })
 
 vim.api.nvim_create_autocmd({ "VimEnter" }, {
     callback = function() tree.toggle({focus = false}) end

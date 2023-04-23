@@ -1,5 +1,5 @@
 
-vim.keymap.set("n", "<leader>fs", vim.cmd.Ex)
+vim.keymap.set("n", "<leader>fs", vim.cmd.Ex, {desc = "Open filesystem"})
 
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
@@ -16,16 +16,16 @@ vim.keymap.set("x", "P", "p")
 vim.keymap.set({"n", "v"}, "<leader>d", "\"_d")
 vim.keymap.set({"n", "x"}, "x", "\"_x")
 
-vim.keymap.set("n", "<leader>ss", [[:.,$s/\<<C-r><C-w>\>//gcI<Left><Left><Left><Left>]])
+vim.keymap.set("n", "<leader>ss", [[:.,$s/\<<C-r><C-w>\>//gcI<Left><Left><Left><Left>]], {desc = "Search and Replace word under cursor"})
 
 -- vim.keymap.set("n", "<leader><leader>", ":w<CR>:so<CR>:PackerSync<CR>")
 
-vim.keymap.set("n", "<leader>/", ":noh<CR>", {silent = true})
+vim.keymap.set("n", "<leader>/", ":noh<CR>", {desc = "Remove highlight", silent = true})
 
 vim.keymap.set("n", "o", "o<Esc>")
 vim.keymap.set("n", "O", "O<Esc>")
 
-vim.keymap.set("n", "<leader>b",  ":ls<CR>:b<space>")
+vim.keymap.set("n", "<leader>b",  ":ls<CR>:b<space>", {desc = "See open buffers"})
 
 
 -- Remap for dealing with word wrap
