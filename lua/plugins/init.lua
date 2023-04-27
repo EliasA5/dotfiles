@@ -48,5 +48,7 @@ return
     { 'echasnovski/mini.pairs',   config = function() require('mini.pairs').setup() end },
     { 'echasnovski/mini.surround'},
     'folke/neodev.nvim',
+    {'christoomey/vim-tmux-navigator', lazy = false},
+    {'stevearc/oil.nvim', lazy = false, config = function() require('oil').setup() end},
 
 }

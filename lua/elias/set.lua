@@ -6,9 +6,9 @@ set.guicursor = ""
 set.number = true
 set.relativenumber = true
 
-set.tabstop = 4
+-- set.tabstop = 4
 set.softtabstop = 4
-set.shiftwidth = 4
+-- set.shiftwidth = 4
 set.expandtab = true
 
 set.smartindent = true
@@ -30,6 +30,9 @@ set.undofile = true
 
 -- Set completeopt to have a better completion experience
 set.completeopt = 'menuone,noselect'
+
+-- set termguicolors to enable highlight groups
+set.termguicolors = true
 
 local highlight_group = vim.api.nvim_create_augroup('YankHighlight', { clear = true })
 vim.api.nvim_create_autocmd('TextYankPost', {
