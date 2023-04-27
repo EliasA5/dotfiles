@@ -21,10 +21,13 @@ vim.keymap.set('n', '<leader>tl', vim.diagnostic.open_float, { desc = "Open diag
 vim.keymap.set("n", "<leader>rr", vim.lsp.buf.rename, {desc = "Rename symbol under cursor"})
 
 local cmp = require('cmp')
+local cmp_action = require('lsp-zero').cmp_action()
 
 cmp.setup({
   mapping = {
       ['<CR>'] = cmp.mapping.confirm({select = true}),
+      ['<Tab>'] = cmp_action.select_prev_or_fallback(),
+      ['<S-Tab>'] = cmp_action.tab_complete(),
   }
 })
 
