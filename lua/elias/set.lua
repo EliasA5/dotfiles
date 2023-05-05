@@ -6,11 +6,13 @@ set.guicursor = ""
 set.number = true
 set.relativenumber = true
 
--- set.tabstop = 4
-set.softtabstop = 4
--- set.shiftwidth = 4
-set.expandtab = true
+set.tabstop = 4
+set.softtabstop = 0
+set.shiftwidth = 0
+set.expandtab = false
+set.smarttab = true
 
+set.autoindent = true
 set.smartindent = true
 -- Enable break indent
 set.breakindent = true
