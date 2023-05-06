@@ -50,5 +50,5 @@ return
     'folke/neodev.nvim',
     {'christoomey/vim-tmux-navigator', lazy = false},
     {'stevearc/oil.nvim', lazy = false, config = function() require('oil').setup() end},
-
+	'michaeljsmith/vim-indent-object'
 }
