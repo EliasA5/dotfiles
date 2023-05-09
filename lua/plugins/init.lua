@@ -44,7 +44,7 @@ return
     'freddiehaddad/feline.nvim',
     'nvim-tree/nvim-tree.lua',
     'folke/which-key.nvim', 
-    { 'echasnovski/mini.comment', config = function() require('mini.comment').setup() end },
+    { 'echasnovski/mini.comment'},
     { 'echasnovski/mini.pairs',   config = function() require('mini.pairs').setup() end },
     { 'echasnovski/mini.surround'},
     'folke/neodev.nvim',
