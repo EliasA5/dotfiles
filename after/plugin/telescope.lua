@@ -30,5 +30,5 @@ vim.keymap.set('n', 'gD', builtin.lsp_type_definitions, {desc = "LSP Type Defini
 vim.keymap.set('n', 'gr', builtin.lsp_references, {desc = "LSP References"})
 vim.keymap.set('n', 'gb', builtin.buffers, {desc = "Goto buffers"})
 vim.keymap.set('n', '<leader>fc', builtin.lsp_incoming_calls, {desc = "Fuzzy find function calls"})
-
+-- vim.keymap.set('n', 'gi', builtin.lsp_implementations, {desc = "LSP Implementation"})
 
