@@ -34,4 +34,10 @@ vim.keymap.set("n", "<C-Down>", "4<C-w>-")
 
 vim.keymap.set("n", "ss", "s")
 
+vim.keymap.set("n", "<leader>gx",
+function()
+	vim.cmd("let @+ = trim(execute('pwd'))")
+	print(vim.fn.getcwd())
+end , { desc = "copy pwd to clipboard", })
+vim.keymap.set("n", "<leader><leader>", ":w<CR>:so<CR>")
 
