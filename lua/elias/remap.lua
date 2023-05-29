@@ -41,7 +41,7 @@ function()
 end , { desc = "copy pwd to clipboard", })
 
 -- vim.keymap.set("n", "<leader><leader>", ":w<CR>:so<CR>")
-vim.keymap.set("n", "gw", ":%s/\\s\\+$//e<CR>", { desc = "Write buffer and remove trailing white spaces", })
+vim.keymap.set("n", "gw", ":%s/\\s\\+$//e<CR>", { desc = "Remove trailing white spaces", })
 
 vim.keymap.set("n", "<leader>st", ":set invlist<CR>", { desc = "show tabs", silent = true, })
 
