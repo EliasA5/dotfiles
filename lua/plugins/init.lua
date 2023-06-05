@@ -51,5 +51,8 @@ return
     {'christoomey/vim-tmux-navigator', lazy = false},
     {'stevearc/oil.nvim', lazy = false, config = function() require('oil').setup() end},
 	'michaeljsmith/vim-indent-object',
+	{'ribru17/bamboo.nvim',
+		lazy = false,
+	},
 	{'EliasA5/pastem', config = function() require('pastem').setup() end},
 }

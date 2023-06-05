@@ -6,4 +6,5 @@ vim.g.loaded_netrw_gitignore = 1
 require("elias.lazy")
 require("elias.remap")
 require("elias.set")
+require("elias.autocommands")
 
