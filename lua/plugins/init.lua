@@ -55,4 +55,5 @@ return
 		lazy = false,
 	},
 	{'EliasA5/pastem', config = function() require('pastem').setup() end},
+	{'EliasA5/erlang-skeletons', config = function() require('erlang-skeletons').setup() end},
 }
