@@ -33,7 +33,7 @@ return
         {'hrsh7th/cmp-nvim-lsp'}, -- Required
         {'L3MON4D3/LuaSnip'},     -- Required
     }
-},    
+	},
     'voldikss/vim-floaterm',
     {'hkupty/iron.nvim'},
     {
