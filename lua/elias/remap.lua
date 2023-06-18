@@ -1,5 +1,6 @@
 
 vim.keymap.set("n", "<leader>fs", ":Oil<CR>", {desc = "Open filesystem", silent = true, })
+vim.keymap.set("n", "-", ":Oil<CR>", { silent = true, })
 
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
