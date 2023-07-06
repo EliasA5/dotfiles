@@ -55,4 +55,5 @@ return
 	},
 	{'EliasA5/pastem', config = function() require('pastem').setup() end},
 	{'EliasA5/erlang-skeletons', config = function() require('erlang-skeletons').setup() end},
+	{'ggandor/leap.nvim', lazy = false, config = function() require('leap').add_default_mappings() end, },
 }
