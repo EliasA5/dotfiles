@@ -38,4 +38,9 @@ vim.keymap.set('n', '<leader>tv', function()
     vim.diagnostic.config({ virtual_text = virtual_text, })
 end, { desc = "Toggle diagnostic virtual text", })
 
+local lspconfig = require('lspconfig')
+
+lspconfig.erlangls.setup({
+	root_dir = lspconfig.util.root_pattern('erlang_ls.config', '.git')
+})
 
