@@ -33,8 +33,6 @@ vim.keymap.set("n", "<C-Right>", "4<C-w>>")
 vim.keymap.set("n", "<C-Up>", "4<C-w>+")
 vim.keymap.set("n", "<C-Down>", "4<C-w>-")
 
-vim.keymap.set("n", "ss", "s")
-
 vim.keymap.set("n", "<leader>gx",
 function()
 	vim.cmd("let @+ = trim(execute('pwd'))")
