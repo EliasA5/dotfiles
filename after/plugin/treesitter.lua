@@ -30,10 +30,19 @@ require'nvim-treesitter.configs'.setup {
           enable = true,
           lookahead = true,
           keymaps = {
-              ["iq"] = "@parameter.inner",
-              ["aq"] = "@parameter.outer",
+              ["iq"] = {query = "@parameter.inner", desc = "Select inner part of function parameter" },
+              ["aq"] = {query = "@parameter.outer", desc = "Select outer part of function parameter" },
           },
-      }
+      },
+	  swap = {
+		  enable = true,
+		  swap_next = {
+			  ["<leader>q"] = "@parameter.inner",
+		  },
+		  swap_previous = {
+			  ["<leader>Q"] = "@parameter.inner",
+		  },
+	  },
   },
 
 }
