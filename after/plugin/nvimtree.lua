@@ -26,11 +26,11 @@ require("nvim-tree").setup {
     view = {
         cursorline = true,
         preserve_window_proportions = true,
-        mappings = {
-            custom_only = true,
-            list = {
-            },
-        },
+        -- mappings = {
+        --     custom_only = true,
+        --     list = {
+        --     },
+        -- },
     },
     actions = {
         open_file = {

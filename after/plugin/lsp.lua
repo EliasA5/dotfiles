@@ -11,8 +11,6 @@ local lsp = require('lsp-zero').preset({
 -- vim.keymap.set('n', 'gr', vim.lsp.buf.references)
 -- vim.keymap.set('n', '<leader>gi', vim.lsp.buf.implementation)
 vim.keymap.set('n', '<leader>gf', vim.lsp.buf.code_action, {desc = "LSP code action"})
--- (Optional) Configure lua language server for neovim
-lsp.nvim_workspace()
 
 lsp.setup()
 
@@ -22,8 +20,10 @@ vim.keymap.set("n", "<leader>rr", vim.lsp.buf.rename, {desc = "Rename symbol und
 
 local cmp = require('cmp')
 local cmp_action = require('lsp-zero').cmp_action()
+local cmp_format = require('lsp-zero').cmp_format()
 
 cmp.setup({
+  formatting = cmp_format,
   mapping = {
       ['<CR>'] = cmp.mapping.confirm({select = true}),
       ['<Tab>'] = cmp_action.select_prev_or_fallback(),
