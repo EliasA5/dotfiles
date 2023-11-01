@@ -1,8 +1,8 @@
 return
 {
     {
-        'nvim-telescope/telescope.nvim', tag = '0.1.1',
-        -- or                            , branch = '0.1.x',
+        'nvim-telescope/telescope.nvim',
+        branch = '0.1.x',
         dependencies = { 'nvim-lua/plenary.nvim' }
     },
     'Mofiqul/dracula.nvim',
@@ -42,7 +42,7 @@ return
     'nvim-tree/nvim-web-devicons',
     'freddiehaddad/feline.nvim',
     'nvim-tree/nvim-tree.lua',
-    'folke/which-key.nvim', 
+    'folke/which-key.nvim',
     { 'echasnovski/mini.comment'},
     { 'echasnovski/mini.pairs',   config = function() require('mini.pairs').setup() end },
     { 'echasnovski/mini.surround'},

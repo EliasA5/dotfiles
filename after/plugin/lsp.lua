@@ -38,6 +38,13 @@ vim.keymap.set('n', '<leader>tv', function()
     vim.diagnostic.config({ virtual_text = virtual_text, })
 end, { desc = "Toggle diagnostic virtual text", })
 
+require('mason').setup({})
+require('mason-lspconfig').setup({
+  handlers = {
+    lsp.default_setup,
+  }
+})
+
 local lspconfig = require('lspconfig')
 
 lspconfig.erlangls.setup({
