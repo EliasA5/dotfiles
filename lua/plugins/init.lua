@@ -57,4 +57,9 @@ return
 	{'EliasA5/erlang-skeletons', branch = 'spaces', config = function() require('erlang-skeletons').setup() end},
 	{'ggandor/leap.nvim', lazy = false, config = function() require('leap').add_default_mappings() end, },
 	"EliasA5/elixir-docs.nvim",
+  {
+    "nvim-neorg/neorg",
+    build = ":Neorg sync-parsers",
+    dependencies = { "nvim-lua/plenary.nvim" },
+  },
 }
