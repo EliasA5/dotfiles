@@ -14,6 +14,7 @@ vim.keymap.set("n", "N", "Nzzzv")
 
 vim.keymap.set("x", "p", "P")
 vim.keymap.set("x", "P", "p")
+vim.keymap.set("n", "gP", "`[v`]", {desc = "select pasted text"})
 vim.keymap.set({"n", "v"}, "<leader>d", "\"_d")
 vim.keymap.set({"n", "x"}, "x", "\"_x")
 
