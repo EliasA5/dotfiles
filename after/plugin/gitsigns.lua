@@ -41,4 +41,6 @@ require('gitsigns').setup {
   },
 }
 
-vim.keymap.set("n", "<leader>gt" , ":Gitsigns toggle_signs<CR>", { silent = true})
+vim.keymap.set("n", "<leader>gt" , ":Gitsigns toggle_signs<CR>", { silent = true, desc = "toggle gitsigns"})
+vim.keymap.set("n", "<leader>tb" , ":Gitsigns toggle_current_line_blame<CR>", { silent = true, desc = "toggle git blame on line"})
+
