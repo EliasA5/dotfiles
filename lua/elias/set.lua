@@ -26,6 +26,7 @@ set.hidden = true
 set.incsearch = true
 
 set.splitright = true
+set.splitbelow = true
 
 -- Save undo history
 set.undofile = true
