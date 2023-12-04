@@ -11,7 +11,6 @@ return
         build = ':TSUpdate',
         dependencies = {'nvim-treesitter/nvim-treesitter-textobjects'}
     },
-    'nvim-treesitter/playground',
     'christoomey/vim-tmux-navigator',
     'szw/vim-maximizer',
     {
