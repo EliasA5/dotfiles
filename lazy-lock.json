@@ -2,7 +2,6 @@
   "LuaSnip": { "branch": "master", "commit": "f03089854a8e15594a01562fa7192d0009a6fbe7" },
   "bamboo.nvim": { "branch": "master", "commit": "c5984255db79fc76ad88dc0478a5a54a15ab7a51" },
   "cmp-nvim-lsp": { "branch": "main", "commit": "44b16d11215dce86f253ce0c30949813c0a90765" },
-  "dracula.nvim": { "branch": "main", "commit": "7200e64c589f899d29f8963aad7543856d1c2545" },
   "elixir-docs.nvim": { "branch": "main", "commit": "9351d51c84d184e91d19eef0c0d65b42beac91ae" },
   "erlang-skeletons": { "branch": "spaces", "commit": "463c68523d2246eb3462560b84b297c793ff0819" },
   "feline.nvim": { "branch": "main", "commit": "a6bebd903e84d5ce0e97c597e0ca85cd24109002" },
