@@ -3,5 +3,6 @@
   "leap.nvim": { "branch": "main", "commit": "b6ae80f8fc9993638608fc1a51c6ab0eeb12618c" },
   "mini.comment": { "branch": "main", "commit": "3d9c8009615857e982f09bc5357fc95f2a2175f3" },
   "mini.surround": { "branch": "main", "commit": "af8129efcabe95fc08a233e9f91569829bed031f" },
-  "pastem": { "branch": "master", "commit": "c59a1b7d09e214b1870acd67cf141a5f66c723b6" }
+  "pastem": { "branch": "master", "commit": "c59a1b7d09e214b1870acd67cf141a5f66c723b6" },
+  "vim-indent-object": { "branch": "master", "commit": "5c5b24c959478929b54a9e831a8e2e651a465965" }
 }
