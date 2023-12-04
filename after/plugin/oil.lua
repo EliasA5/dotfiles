@@ -59,8 +59,8 @@ oil.setup({
     ["-"] = "actions.parent",
     ["_"] = "actions.open_cwd",
     ["`"] = "actions.cd",
-    ["~"] = "actions.tcd",
-    ["g."] = "actions.toggle_hidden",
+    ["~"] = false,
+    ["gh"] = "actions.toggle_hidden",
   },
   -- Set to false to disable all of the above keymaps
   use_default_keymaps = true,
