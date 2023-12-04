@@ -5,7 +5,6 @@ return
         branch = '0.1.x',
         dependencies = { 'nvim-lua/plenary.nvim' }
     },
-    'Mofiqul/dracula.nvim',
     {
         'nvim-treesitter/nvim-treesitter',
         build = ':TSUpdate',
