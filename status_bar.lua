@@ -60,6 +60,9 @@ wezterm.on('update-right-status', function(window, pane)
   local cpu_util = "CPU " .. capture(CMDS.cpu_util_cmd)
   table.insert(cells, cpu_util)
 
+  local ram_util = capture(CMDS.ram_usage)
+  table.insert(cells, ram_util)
+
   local date = wezterm.strftime '%a %b %-d %H:%M'
   table.insert(cells, date)
 
