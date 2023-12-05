@@ -53,8 +53,8 @@ wezterm.on('update-right-status', function(window, pane)
       hostname = wezterm.hostname()
     end
 
-    table.insert(cells, cwd)
-    -- table.insert(cells, hostname)
+    -- table.insert(cells, cwd)
+    table.insert(cells, hostname)
   end
 
   local cpu_util = "CPU " .. capture(CMDS.cpu_util_cmd)
