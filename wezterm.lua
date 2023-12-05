@@ -37,9 +37,10 @@ config.keys = {
   {
     key = 'v',
     mods = 'LEADER',
-    action = act.SplitPane { direction = 'Right',
-                                        size = { Percent = 40 },
-                                      },
+    action = act.SplitPane {
+      direction = 'Right',
+      size = { Percent = 40 },
+    },
 },
   {
     key = 'h',
