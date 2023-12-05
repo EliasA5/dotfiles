@@ -1,5 +1,18 @@
 
 local wezterm = require('wezterm')
+local _M = {}
+local CMDS = require('bash_cmds')
+
+local function capture(cmd, raw)
+  local f = assert(io.popen(cmd, 'r'))
+  local s = assert(f:read('*a'))
+  f:close()
+  if raw then return s end
+  s = string.gsub(s, '^%s+', '')
+  s = string.gsub(s, '%s+$', '')
+  s = string.gsub(s, '[\n\r]+', ' ')
+  return s
+end
 
 --TODO add cpu usage and MEM usage
 wezterm.on('update-right-status', function(window, pane)
@@ -41,10 +54,12 @@ wezterm.on('update-right-status', function(window, pane)
     end
 
     table.insert(cells, cwd)
-    table.insert(cells, hostname)
+    -- table.insert(cells, hostname)
   end
 
-  -- I like my date/time in this style: "Wed Mar 3 08:14"
+  local cpu_util = "CPU " .. capture(CMDS.cpu_util_cmd)
+  table.insert(cells, cpu_util)
+
   local date = wezterm.strftime '%a %b %-d %H:%M'
   table.insert(cells, date)
 
@@ -95,4 +110,10 @@ wezterm.on('update-right-status', function(window, pane)
 
   window:set_right_status(wezterm.format(elements))
 end)
+
+function _M.apply_to_config(config)
+  config.status_update_interval = 5000
+end
+
+return _M
 

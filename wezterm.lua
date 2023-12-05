@@ -29,6 +29,7 @@ config.colors = {
 }
 
 config.background = require("background")
-require("status_bar")
+local status_bar = require("status_bar")
+status_bar.apply_to_config(config)
 
 return config
