@@ -14,7 +14,6 @@ local function capture(cmd, raw)
   return s
 end
 
---TODO add cpu usage and MEM usage
 wezterm.on('update-right-status', function(window, pane)
   -- Each element holds the text for a cell in a "powerline" style << fade
   local cells = {}
@@ -25,18 +24,17 @@ wezterm.on('update-right-status', function(window, pane)
   local cwd_uri = pane:get_current_working_dir()
   if cwd_uri then
     local cwd = ''
-    local hostname = ''
+    local hostname = wezterm.hostname()
 
     if type(cwd_uri) == 'userdata' then
       cwd = cwd_uri.file_path
-      hostname = cwd_uri.host or wezterm.hostname()
+      hostname = cwd_uri.host or hostname
     else
       -- an older version of wezterm, 20230712-072601-f4abf8fd or earlier,
       -- which doesn't have the Url object
       cwd_uri = cwd_uri:sub(8)
       local slash = cwd_uri:find '/'
       if slash then
-        hostname = cwd_uri:sub(1, slash - 1)
         -- and extract the cwd from the uri, decoding %-encoding
         cwd = cwd_uri:sub(slash):gsub('%%(%x%x)', function(hex)
           return string.char(tonumber(hex, 16))
@@ -44,16 +42,7 @@ wezterm.on('update-right-status', function(window, pane)
       end
     end
 
-    -- Remove the domain name portion of the hostname
-    local dot = hostname:find '[.]'
-    if dot then
-      hostname = hostname:sub(1, dot - 1)
-    end
-    if hostname == '' then
-      hostname = wezterm.hostname()
-    end
-
-    -- table.insert(cells, cwd)
+    table.insert(cells, cwd)
     table.insert(cells, hostname)
   end
 
@@ -82,7 +71,7 @@ wezterm.on('update-right-status', function(window, pane)
     '#52307c',
     '#663a82',
     '#7c5295',
-    '#b491c8',
+    '#8d54c5',
   }
 
   -- Foreground color for the text across the fade
