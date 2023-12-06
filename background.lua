@@ -4,7 +4,7 @@ local dimmer = { brightness = 0.10 }
 return {
   {
     source = {
-      File = '/home/elias/Pictures/wallhaven-kx98xd_1920x1080.png',
+      File = 'C:\\Users\\eassaf\\OneDrive - NVIDIA Corporation\\Pictures\\wallhaven-kx98xd.jpg',
     },
     hsb = dimmer,
   }
