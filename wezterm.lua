@@ -29,6 +29,8 @@ config.colors = {
 }
 
 config.background = require("background")
+local status_bar = require("status_bar")
+status_bar.apply_to_config(config)
 
 config.default_cursor_style = 'SteadyBlock'
 
