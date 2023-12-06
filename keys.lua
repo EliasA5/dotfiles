@@ -16,9 +16,14 @@ return {
     action = act.SplitVertical { domain = 'CurrentPaneDomain' },
   },
   {
-    key = 'c',
+    key = 'x',
     mods = 'LEADER',
     action = act.CloseCurrentPane { confirm = true },
+  },
+  {
+    key = 'c',
+    mods = 'LEADER',
+    action = act.SpawnTab('CurrentPaneDomain'),
   },
   {
     key = 'm',
@@ -54,5 +59,30 @@ return {
     key = 'RightArrow',
     mods = 'LEADER',
     action = act.AdjustPaneSize { 'Right', 5 },
+  },
+  {
+    key = 'RightArrow',
+    mods = 'CTRL|SHIFT',
+    action = act.ActivateTabRelative(1)
+  },
+  {
+    key = 'LeftArrow',
+    mods = 'CTRL|SHIFT',
+    action = act.ActivateTabRelative(-1)
+  },
+  {
+    key = 'l',
+    mods = 'CTRL|SHIFT',
+    action = act.ActivateTabRelative(1)
+  },
+  {
+    key = 'h',
+    mods = 'CTRL|SHIFT',
+    action = act.ActivateTabRelative(-1)
+  },
+  {
+    key = 'l',
+    mods = 'LEADER',
+    action = act.ShowLauncher,
   },
 }

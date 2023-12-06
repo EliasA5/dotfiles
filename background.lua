@@ -1,5 +1,5 @@
 
-local dimmer = { brightness = 0.04 }
+local dimmer = { brightness = 0.10 }
 
 return {
   {
