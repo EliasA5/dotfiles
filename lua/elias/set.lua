@@ -1,7 +1,7 @@
 local set = vim.opt
 set.clipboard = "unnamedplus"
 
-set.guicursor = ""
+set.guicursor = "n-v-c-sm:block,i-ci-ve:ver50,r-cr-o:hor50"
 
 set.number = true
 set.relativenumber = true
