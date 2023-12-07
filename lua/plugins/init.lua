@@ -10,7 +10,6 @@ return
         build = ':TSUpdate',
         dependencies = {'nvim-treesitter/nvim-treesitter-textobjects'}
     },
-    'christoomey/vim-tmux-navigator',
     'szw/vim-maximizer',
     {
         'VonHeikemen/lsp-zero.nvim',
@@ -45,7 +44,7 @@ return
     { 'echasnovski/mini.pairs',   config = function() require('mini.pairs').setup() end },
     { 'echasnovski/mini.surround'},
     'folke/neodev.nvim',
-    {'christoomey/vim-tmux-navigator', lazy = false},
+    -- {'christoomey/vim-tmux-navigator', lazy = false},
     {'stevearc/oil.nvim', lazy = false, config = function() require('oil').setup() end},
 	'michaeljsmith/vim-indent-object',
 	{'ribru17/bamboo.nvim',
@@ -59,5 +58,12 @@ return
     "nvim-neorg/neorg",
     build = ":Neorg sync-parsers",
     dependencies = { "nvim-lua/plenary.nvim" },
+  },
+  {
+    'numToStr/Navigator.nvim',
+    lazy = false,
+    config = function()
+        require('Navigator').setup()
+    end
   },
 }
