@@ -43,10 +43,10 @@ return
     { 'echasnovski/mini.comment'},
     { 'echasnovski/mini.pairs',   config = function() require('mini.pairs').setup() end },
     { 'echasnovski/mini.surround'},
+    { 'echasnovski/mini.indentscope', config = function() require('mini.indentscope').setup() end },
     'folke/neodev.nvim',
     -- {'christoomey/vim-tmux-navigator', lazy = false},
     {'stevearc/oil.nvim', lazy = false, config = function() require('oil').setup() end},
-	'michaeljsmith/vim-indent-object',
 	{'ribru17/bamboo.nvim',
 		lazy = false,
 	},
@@ -66,4 +66,5 @@ return
         require('Navigator').setup()
     end
   },
+  'ojroques/nvim-osc52',
 }
