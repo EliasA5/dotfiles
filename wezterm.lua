@@ -19,8 +19,8 @@ config.leader = {
 }
 config.keys = require("keys")
 
-local nvim_integ = require("nvim_intergration")
-nvim_integ.add_keybinds(config)
+-- local nvim_integ = require("nvim_intergration")
+-- nvim_integ.add_keybinds(config)
 
 config.enable_scroll_bar = true
 config.min_scroll_bar_height = '2cell'
