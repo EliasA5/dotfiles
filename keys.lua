@@ -84,6 +84,8 @@ return {
    bind_if(isnt_passthrough, 'RightArrow', 'LEADER', act.AdjustPaneSize({'Right', 5})),
    bind_if(isnt_passthrough, 'RightArrow', 'CTRL', act.ActivateTabRelative(1)),
    bind_if(isnt_passthrough, 'LeftArrow', 'CTRL', act.ActivateTabRelative(-1)),
+   bind_if(isnt_passthrough, 'RightArrow', 'CTRL|SHIFT', act.Nop),
+   bind_if(isnt_passthrough, 'LeftArrow', 'CTRL|SHIFT', act.Nop),
    -- bind_if(isnt_passthrough, 'L', 'CTRL|SHIFT', act.ActivateTabRelative(1)),
    -- bind_if(isnt_passthrough, 'H', 'CTRL|SHIFT', act.ActivateTabRelative(-1)),
   {
