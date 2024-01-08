@@ -1,6 +1,11 @@
 
 vim.api.nvim_create_autocmd({"BufEnter", "BufWinEnter"}, { pattern = {"*.norg"}, command = "set conceallevel=3" })
 
+vim.keymap.set(
+  "n", "<leader>nb",
+  "<cmd>Neorg keybind all core.looking-glass.magnify-code-block<cr>",
+  { noremap = true, desc = "Edit code block in a separate buffer"}
+)
 
 local set = vim.opt_local
 
