@@ -6,7 +6,7 @@ local user = os.getenv("USER")
 return {
   {
     source = {
-      File = '/home/' .. user .. '/Pictures/wallhaven-kx98xd_1920x1080.png',
+      File = '/home/' .. user .. '/Pictures/wezterm_background.jpg',
     },
     hsb = dimmer,
   }
