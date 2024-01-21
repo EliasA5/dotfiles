@@ -48,9 +48,9 @@ local tree = require("nvim-tree.api").tree
 
 vim.keymap.set("n", "<leader>ft", function() tree.toggle({ focus = false }) end, { desc = "Filetree Toggle", silent = true })
 
-vim.api.nvim_create_autocmd({ "VimEnter" }, {
-    callback = function() tree.toggle({focus = false}) end
-})
+-- vim.api.nvim_create_autocmd({ "VimEnter" }, {
+--     callback = function() tree.toggle({focus = false}) end
+-- })
 
 vim.api.nvim_create_autocmd({"QuitPre"}, {
     callback = function() vim.cmd("NvimTreeClose") end,
