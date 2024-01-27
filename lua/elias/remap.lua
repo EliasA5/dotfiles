@@ -37,7 +37,7 @@ vim.keymap.set("n", "<C-Down>", "4<C-w>-")
 
 vim.keymap.set("n", "<leader>gx",
 function()
-  path = vim.api.nvim_buf_get_name(0)
+  local path = vim.api.nvim_buf_get_name(0)
   print(path)
   vim.fn.setreg('+', path)
   return path
@@ -59,4 +59,12 @@ end, { expr = true, desc = "properly indent on empty line when insert" })
 vim.keymap.set({"n", "x", "o"}, "s", function()
   require('leap').leap({target_windows = {vim.api.nvim_get_current_win()}})
 end)
+
+vim.keymap.set("n", "dd", function()
+  if vim.api.nvim_get_current_line():match("^%s*$") then
+      return '"_dd'
+  else
+      return "dd"
+  end
+end, { expr = true, desc = "Delete current line, copy if not empty" })
 
