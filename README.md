@@ -7,7 +7,7 @@
 dconf dump / > saved_settings.dconf
 
 #extentions:
-ls ~/.local/share/gnome-shell/extensions > extensions
+ls ~/.local/share/gnome-shell/extensions | awk -F '@' '{print $1}' > extensions
 ```
 
 
