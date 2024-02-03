@@ -38,7 +38,7 @@ local lspconfig = require('lspconfig')
 
 local servers = {
   clangd = {},
-  pyright = {},
+  pylsp = {},
   erlangls = {
     root_dir = lspconfig.util.root_pattern('erlang_ls.config', '.git')
   },
