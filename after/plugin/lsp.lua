@@ -16,7 +16,9 @@ lsp.setup()
 
 vim.keymap.set('n', '<leader>tt', '<cmd>Telescope diagnostics<CR>', { desc = "LSP Diagnostics", noremap = true, silent = true })
 vim.keymap.set('n', '<leader>tl', vim.diagnostic.open_float, { desc = "Open diagnostic float", noremap = true, silent = true })
-vim.keymap.set("n", "<leader>rr", vim.lsp.buf.rename, {desc = "Rename symbol under cursor"})
+vim.keymap.set('n', '<leader>rr', vim.lsp.buf.rename, {desc = "Rename symbol under cursor"})
+vim.keymap.set('n', 'K', vim.lsp.buf.hover, {desc = "Hover Documentation"})
+vim.keymap.set('n', '<C-k>', vim.lsp.buf.signature_help, {desc = "Signature Documentation"})
 
 local cmp = require('cmp')
 local cmp_action = require('lsp-zero').cmp_action()
