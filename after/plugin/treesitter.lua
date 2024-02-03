@@ -1,4 +1,5 @@
-require'nvim-treesitter.configs'.setup {
+vim.defer_fn(function()
+require'nvim-treesitter.configs'.setup({
   -- A list of parser names, or "all" (the four listed parsers should always be installed)
   ensure_installed = { "c", "erlang", "python", "scheme", "ocaml", "lua", "vim", "vimdoc", "query"},
 
@@ -45,6 +46,6 @@ require'nvim-treesitter.configs'.setup {
 	  },
   },
 
-}
-
+})
+end, 0)
 
