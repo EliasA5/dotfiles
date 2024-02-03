@@ -90,7 +90,9 @@ cmp.setup({
                   behavior = cmp.ConfirmBehavior.Replace,
                   select = true,
                 }),
-      ['<C-Space>'] = cmp.mapping.complete({}),
+      ["<C-s>"] = cmp.mapping(cmp.mapping.complete({
+          reason = cmp.ContextReason.Auto,
+        }), {"i", "c"}),
       ['<Tab>'] = cmp.mapping(function(fallback)
             if cmp.visible() then
               cmp.select_next_item()
