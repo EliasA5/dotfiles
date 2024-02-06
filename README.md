@@ -9,6 +9,11 @@ Installation:
     ```bash
     git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
     ```
-2. open tmux, and hit `<C-Space>` then `I`.
-3. Enjoy.
+3. open tmux and source the config:
+    ```
+    tmux
+    tmux source ~/.config/tmux/tmux.conf
+    ```
+4. trigger an update: `<C-Space>` then `I`.
+5. Enjoy.
 
