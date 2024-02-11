@@ -9,7 +9,7 @@ set.relativenumber = true
 set.tabstop = 4
 set.softtabstop = 0
 set.shiftwidth = 0
-set.expandtab = false
+set.expandtab = true
 set.smarttab = true
 
 set.autoindent = true
