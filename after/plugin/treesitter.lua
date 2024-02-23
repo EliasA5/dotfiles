@@ -24,8 +24,14 @@ require'nvim-treesitter.configs'.setup({
       move = {
           enable = true,
           set_jumps = true,
-          goto_previous_start = { ["[["] = "@parameter.inner", },
-          goto_next_start = { ["]]"] = "@parameter.inner", },
+          goto_previous_start = {
+            ["[["] = "@parameter.inner",
+            ["<leader>gf"] = "@function.outer",
+          },
+          goto_next_start = {
+            ["]]"] = "@parameter.inner",
+            ["<leader>gF"] = "@function.outer",
+          },
       },
       select = {
           enable = true,
@@ -33,6 +39,8 @@ require'nvim-treesitter.configs'.setup({
           keymaps = {
               ["iq"] = {query = "@parameter.inner", desc = "Select inner part of function parameter" },
               ["aq"] = {query = "@parameter.outer", desc = "Select outer part of function parameter" },
+              ["if"] = {query = "@function.inner", desc = "Select inner part of the function" },
+              ["af"] = {query = "@function.outer", desc = "Select inner part of the function" },
           },
       },
 	  swap = {

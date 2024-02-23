@@ -7,7 +7,7 @@ local on_attach = function(_, bufnr)
     vim.keymap.set(mode, keys, func, opts)
   end
 
-  map('n', '<leader>gf', vim.lsp.buf.code_action, {desc = "LSP code action"})
+  -- map('n', '<leader>gf', vim.lsp.buf.code_action, {desc = "LSP code action"})
   map('n', '<leader>tt', '<cmd>Telescope diagnostics<CR>', { desc = "LSP Diagnostics", noremap = true, silent = true })
   map('n', '<leader>tl', vim.diagnostic.open_float, { desc = "Open diagnostic float", noremap = true, silent = true })
   map('n', '<leader>rr', vim.lsp.buf.rename, {desc = "Rename symbol under cursor"})

@@ -37,15 +37,6 @@ set.completeopt = 'menuone,noselect'
 -- set termguicolors to enable highlight groups
 set.termguicolors = true
 
-local highlight_group = vim.api.nvim_create_augroup('YankHighlight', { clear = true })
-vim.api.nvim_create_autocmd('TextYankPost', {
-    callback = function()
-        vim.highlight.on_yank()
-    end,
-    group = highlight_group,
-    pattern = '*',
-})
-
 -- add borders to all floating windows
 local orig_util_open_floating_preview = vim.lsp.util.open_floating_preview
 function vim.lsp.util.open_floating_preview(contents, syntax, opts, ...)
