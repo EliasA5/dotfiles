@@ -3,7 +3,7 @@ my tmux configuration
 Installation:
 1. clone the repository:
     ```bash
-    git clone https://github.com/EliasA5/tmux.conf ~/.config/tmux
+    git clone --single-branch -b tmux https://github.com/EliasA5/dotfiles/ ~/.config/tmux
     ```
 2. install tpm:
     ```bash
