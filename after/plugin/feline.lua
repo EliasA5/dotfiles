@@ -186,11 +186,21 @@ local c = {
 			style = "bold",
 		},
 	},
+	is_arrowed = {
+		provider = "is_arrowed",
+		hl = {
+			fg = "fg",
+			bg = "darkblue",
+		},
+    left_sep = "block",
+		right_sep = "block",
+  }
 }
 
 local left = {
 	c.vim_mode,
 	c.gitBranch,
+  c.is_arrowed,
 	c.gitDiffAdded,
   c.gitDiffRemoved,
 	c.gitDiffChanged,
@@ -227,11 +237,18 @@ local components = {
 	},
 }
 
+local custom_providers = {
+    is_arrowed = function()
+      local statusline = require('arrow.statusline')
+      return statusline.text_for_statusline_with_icons()
+    end
+}
+
 feline.setup({
 	components = components,
 	theme = one_monokai,
 	vi_mode_colors = vi_mode_colors,
-
+  custom_providers = custom_providers,
 })
 
 feline.winbar.setup()

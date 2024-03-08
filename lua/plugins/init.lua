@@ -46,11 +46,11 @@ return
   {'EliasA5/pastem', config = function() require('pastem').setup() end},
   {'EliasA5/erlang-skeletons', branch = 'spaces', config = function() require('erlang-skeletons').setup() end},
   {'ggandor/leap.nvim', lazy = false,},
-  "EliasA5/elixir-docs.nvim",
+  'EliasA5/elixir-docs.nvim',
   {
-    "nvim-neorg/neorg",
-    build = ":Neorg sync-parsers",
-    dependencies = { "nvim-lua/plenary.nvim" },
+    'nvim-neorg/neorg',
+    build = ':Neorg sync-parsers',
+    dependencies = { 'nvim-lua/plenary.nvim' },
   },
   {
     'numToStr/Navigator.nvim',
@@ -60,12 +60,5 @@ return
     end
   },
   'ojroques/nvim-osc52',
-  {
-    "ThePrimeagen/harpoon",
-    branch = "harpoon2",
-    dependencies = {
-      "nvim-lua/plenary.nvim",
-      "nvim-telescope/telescope.nvim",
-    },
-  },
+  'otavioschwanck/arrow.nvim',
 }
