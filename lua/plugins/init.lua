@@ -61,4 +61,5 @@ return
   },
   'ojroques/nvim-osc52',
   'otavioschwanck/arrow.nvim',
+  'bloznelis/before.nvim',
 }

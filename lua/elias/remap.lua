@@ -68,3 +68,7 @@ vim.keymap.set("n", "dd", function()
   end
 end, { expr = true, desc = "Delete current line, copy if not empty" })
 
+local before = require('before')
+before.setup()
+vim.keymap.set('n', '<C-p>', before.jump_to_last_edit, {})
+-- vim.keymap.set('n', '<C-p>', before.jump_to_next_edit, {})
