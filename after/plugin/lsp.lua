@@ -12,7 +12,7 @@ local on_attach = function(_, bufnr)
   map('n', '<leader>tl', vim.diagnostic.open_float, { desc = "Open diagnostic float", noremap = true, silent = true })
   map('n', '<leader>rr', vim.lsp.buf.rename, {desc = "Rename symbol under cursor"})
   map('n', 'K', vim.lsp.buf.hover, {desc = "Hover Documentation"})
-  map('n', '<C-k>', vim.lsp.buf.signature_help, {desc = "Signature Documentation"})
+  map('n', '<M-k>', vim.lsp.buf.signature_help, {desc = "Signature Documentation"})
 
   local builtin = require('telescope.builtin')
   map('n', 'gd', builtin.lsp_definitions, {desc = "LSP Defnition"})
