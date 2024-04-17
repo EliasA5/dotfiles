@@ -63,4 +63,10 @@ return
   'ojroques/nvim-osc52',
   'otavioschwanck/arrow.nvim',
   'bloznelis/before.nvim',
+  -- enable on nvim 0.10.*
+  -- {
+  --   "NStefan002/screenkey.nvim",
+  --   cmd = "Screenkey",
+  --   config = true,
+  -- },
 }
