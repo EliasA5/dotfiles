@@ -34,7 +34,7 @@ return
   { 'echasnovski/mini.comment'},
   { 'echasnovski/mini.pairs',   config = function() require('mini.pairs').setup() end },
   { 'echasnovski/mini.surround'},
-  { 'echasnovski/mini.indentscope', config = function() require('mini.indentscope').setup() end },
+  { 'echasnovski/mini.indentscope'},
   { 'echasnovski/mini.splitjoin', version = '*' , config = function() require('mini.splitjoin').setup() end },
   'folke/neodev.nvim',
   -- {'christoomey/vim-tmux-navigator', lazy = false},

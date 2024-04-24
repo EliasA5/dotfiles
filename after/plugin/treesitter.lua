@@ -26,11 +26,11 @@ require'nvim-treesitter.configs'.setup({
           set_jumps = true,
           goto_previous_start = {
             ["[["] = "@parameter.inner",
-            ["<leader>gf"] = "@function.outer",
+            ["<leader>gpf"] = "@function.outer",
           },
           goto_next_start = {
             ["]]"] = "@parameter.inner",
-            ["<leader>gF"] = "@function.outer",
+            ["<leader>gnF"] = "@function.outer",
           },
       },
       select = {
