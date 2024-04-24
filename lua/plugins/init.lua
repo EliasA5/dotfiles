@@ -63,6 +63,7 @@ return
   'ojroques/nvim-osc52',
   'otavioschwanck/arrow.nvim',
   'bloznelis/before.nvim',
+  'stefandtw/quickfix-reflector.vim',
   -- enable on nvim 0.10.*
   -- {
   --   "NStefan002/screenkey.nvim",
