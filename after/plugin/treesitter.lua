@@ -30,7 +30,7 @@ require'nvim-treesitter.configs'.setup({
           },
           goto_next_start = {
             ["]]"] = "@parameter.inner",
-            ["<leader>gnF"] = "@function.outer",
+            ["<leader>gnf"] = "@function.outer",
           },
       },
       select = {
