@@ -35,6 +35,9 @@ vim.keymap.set("n", "<C-Right>", "4<C-w>>")
 vim.keymap.set("n", "<C-Up>", "4<C-w>+")
 vim.keymap.set("n", "<C-Down>", "4<C-w>-")
 
+-- split horizontally
+vim.keymap.set("n", "<C-w>h", "<C-w>s")
+
 vim.keymap.set("n", "<leader>gx",
 function()
   local path = vim.api.nvim_buf_get_name(0)
