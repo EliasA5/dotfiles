@@ -18,7 +18,6 @@ local on_attach = function(_, bufnr)
   map('n', 'gd', builtin.lsp_definitions, {desc = "LSP Defnition"})
   map('n', 'gD', builtin.lsp_type_definitions, {desc = "LSP Type Definition"})
   map('n', 'gr', builtin.lsp_references, {desc = "LSP References"})
-  map('n', 'gb', builtin.buffers, {desc = "Goto buffers"})
   map('n', '<leader>fc', builtin.lsp_incoming_calls, {desc = "Fuzzy find function calls"})
   -- vim.keymap.set('n', 'gi', builtin.lsp_implementations, {desc = "LSP Implementation"})
 

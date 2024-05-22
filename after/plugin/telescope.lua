@@ -34,4 +34,5 @@ vim.keymap.set('v', '<leader>fw', function()
 	text = string.gsub(text, "\n", "")
   builtin.grep_string({ search = text,})
 end, {desc = "Search for visual selection"})
+vim.keymap.set('n', 'gb', builtin.buffers, {desc = "Goto buffers"})
 
