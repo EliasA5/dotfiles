@@ -1,6 +1,8 @@
 require("toggleterm").setup()
 
 local Terminal  = require('toggleterm.terminal').Terminal
+-- can also give cmd to run on another server, i.e
+-- cmd = 'ssh -t some.server "cd $(pwd) ; source ~/.bash_profile ; lazygit"',
 local lazygit = Terminal:new({
   cmd = "lazygit",
   direction = "float",
