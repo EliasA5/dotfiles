@@ -22,9 +22,26 @@ function _lazygit_toggle()
   lazygit:toggle()
 end
 
-vim.api.nvim_set_keymap("n", "<leader>gs", "<cmd>lua _lazygit_toggle()<CR>", {noremap = true, silent = true})
+local term = Terminal:new({
+  direction = "float",
+  float_opts = {
+    border = "double",
+  },
+  on_open = function(term)
+    vim.cmd("startinsert!")
+    vim.api.nvim_buf_set_keymap(term.bufnr, "n", "q", "<cmd>close<CR>", {noremap = true, silent = true})
+  end,
+  on_close = function(term)
+    vim.cmd("startinsert!")
+  end,
+})
+
+function _term_toggle()
+  term:toggle()
+end
 
 
--- vim.keymap.set('n', '<M-t>', ':FloatermKill term<CR>')
--- vim.keymap.set('n', '<C-t>', ':ToggleTermToggleAll<CR>')
+
+vim.keymap.set('n', '<leader>gs', '<cmd>lua _lazygit_toggle()<CR>', {noremap = true, silent = true})
+vim.keymap.set('n', '<C-t>', '<cmd>lua _term_toggle()<CR>')
 vim.keymap.set('t', '<C-t>', '<C-\\><C-n>:ToggleTermToggleAll<CR>', { silent = true } )
