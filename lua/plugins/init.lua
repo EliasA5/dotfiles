@@ -47,7 +47,6 @@ return
     end
   },
   -- disable on nvim 0.10.*
-  'ojroques/nvim-osc52',
   -- enable on nvim 0.10.*
   -- {
   --   "NStefan002/screenkey.nvim",
