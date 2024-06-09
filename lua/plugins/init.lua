@@ -29,11 +29,6 @@ return
   },
   'freddiehaddad/feline.nvim',
   'folke/which-key.nvim',
-  { 'echasnovski/mini.comment'},
-  { 'echasnovski/mini.pairs',   config = function() require('mini.pairs').setup() end },
-  { 'echasnovski/mini.surround'},
-  { 'echasnovski/mini.indentscope'},
-  { 'echasnovski/mini.splitjoin', version = '*' , config = function() require('mini.splitjoin').setup() end },
   'folke/neodev.nvim',
   {'stevearc/oil.nvim', lazy = false, config = function() require('oil').setup() end},
   {
