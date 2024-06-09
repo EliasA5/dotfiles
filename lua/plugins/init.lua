@@ -44,12 +44,6 @@ return
   {'EliasA5/pastem', config = function() require('pastem').setup() end},
   {'ggandor/leap.nvim', lazy = false,},
   {
-    'nvim-neorg/neorg',
-    build = ':Neorg sync-parsers',
-    dependencies = { 'nvim-lua/plenary.nvim' },
-    version = "7.*"
-  },
-  {
     'numToStr/Navigator.nvim',
     lazy = false,
     config = function()
