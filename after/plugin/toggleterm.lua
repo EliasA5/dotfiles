@@ -4,10 +4,15 @@ local Terminal  = require('toggleterm.terminal').Terminal
 -- can also give cmd to run on another server, i.e
 -- cmd = 'ssh -t some.server "cd $(pwd) ; source ~/.bash_profile ; lazygit"',
 local lazygit = Terminal:new({
-  cmd = "lazygit",
+  cmd = 'ssh -t fit-build-116 "cd $(pwd) ; source ~/.bash_profile ; lazygit"',
+  -- cmd = 'lazygit',
   direction = "float",
   float_opts = {
     border = "double",
+    -- width = math.floor(0.85 * vim.o.columns),
+    -- height = math.floor(0.85 * vim.o.lines),
+    -- row = 0,
+    -- col = 0,
   },
   on_open = function(term)
     vim.cmd("startinsert!")
