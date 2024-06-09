@@ -184,21 +184,21 @@ return {
           style = "bold",
         },
       },
-      is_arrowed = {
-        provider = "is_arrowed",
-        hl = {
-          fg = "fg",
-          bg = "darkblue",
-        },
-        left_sep = "block",
-        right_sep = "block",
-      }
+      -- is_arrowed = {
+      --   provider = "is_arrowed",
+      --   hl = {
+      --     fg = "fg",
+      --     bg = "darkblue",
+      --   },
+      --   left_sep = "block",
+      --   right_sep = "block",
+      -- }
     }
 
     local left = {
       c.vim_mode,
       c.gitBranch,
-      c.is_arrowed,
+      -- c.is_arrowed,
       c.gitDiffAdded,
       c.gitDiffRemoved,
       c.gitDiffChanged,
@@ -236,10 +236,10 @@ return {
     }
 
     local custom_providers = {
-      is_arrowed = function()
-        local statusline = require('arrow.statusline')
-        return statusline.text_for_statusline_with_icons()
-      end
+      -- is_arrowed = function()
+      --   local statusline = require('arrow.statusline')
+      --   return statusline.text_for_statusline_with_icons()
+      -- end
     }
 
     feline.setup({
