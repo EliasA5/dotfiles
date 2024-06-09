@@ -29,7 +29,6 @@ return
   'freddiehaddad/feline.nvim',
   'folke/which-key.nvim',
   'folke/neodev.nvim',
-  {'stevearc/oil.nvim', lazy = false, config = function() require('oil').setup() end},
   {
     'ribru17/bamboo.nvim',
     lazy = false,
