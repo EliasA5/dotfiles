@@ -34,7 +34,6 @@ return
   },
   {'EliasA5/pastem', config = function() require('pastem').setup() end},
   {'ggandor/leap.nvim', lazy = false,},
-  'otavioschwanck/arrow.nvim',
   'stefandtw/quickfix-reflector.vim',
   {
     'nvimdev/template.nvim',
