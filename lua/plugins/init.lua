@@ -10,7 +10,10 @@ return
     build = ':TSUpdate',
     dependencies = {'nvim-treesitter/nvim-treesitter-textobjects'}
   },
-  'szw/vim-maximizer',
+  {
+    'szw/vim-maximizer',
+    keys = {{"<leader>m", vim.cmd.MaximizerToggle, desc = "toggle maximization"}}
+  },
   {
     'williamboman/mason.nvim',
     build = function()
@@ -23,10 +26,6 @@ return
   {'hrsh7th/cmp-nvim-lsp'},
   {'L3MON4D3/LuaSnip'},
   'akinsho/toggleterm.nvim',
-  {
-    'lewis6991/gitsigns.nvim',
-    -- tag = 'release' -- To use the latest release (do not use this if you run Neovim nightly or dev builds!)
-  },
   'freddiehaddad/feline.nvim',
   'folke/which-key.nvim',
   'folke/neodev.nvim',
