@@ -29,7 +29,6 @@ return
   },
   'nvim-tree/nvim-web-devicons',
   'freddiehaddad/feline.nvim',
-  'nvim-tree/nvim-tree.lua',
   'folke/which-key.nvim',
   { 'echasnovski/mini.comment'},
   { 'echasnovski/mini.pairs',   config = function() require('mini.pairs').setup() end },
@@ -37,16 +36,13 @@ return
   { 'echasnovski/mini.indentscope'},
   { 'echasnovski/mini.splitjoin', version = '*' , config = function() require('mini.splitjoin').setup() end },
   'folke/neodev.nvim',
-  -- {'christoomey/vim-tmux-navigator', lazy = false},
   {'stevearc/oil.nvim', lazy = false, config = function() require('oil').setup() end},
   {
     'ribru17/bamboo.nvim',
     lazy = false,
   },
   {'EliasA5/pastem', config = function() require('pastem').setup() end},
-  {'EliasA5/erlang-skeletons', branch = 'spaces', config = function() require('erlang-skeletons').setup() end},
   {'ggandor/leap.nvim', lazy = false,},
-  'EliasA5/elixir-docs.nvim',
   {
     'nvim-neorg/neorg',
     build = ':Neorg sync-parsers',
@@ -61,7 +57,6 @@ return
     end
   },
   'otavioschwanck/arrow.nvim',
-  'bloznelis/before.nvim',
   'stefandtw/quickfix-reflector.vim',
   {
     'nvimdev/template.nvim',
