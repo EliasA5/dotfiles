@@ -59,10 +59,6 @@ vim.keymap.set("n", "i", function()
   end
 end, { expr = true, desc = "properly indent on empty line when insert" })
 
-vim.keymap.set({"n", "x", "o"}, "s", function()
-  require('leap').leap({target_windows = {vim.api.nvim_get_current_win()}})
-end)
-
 vim.keymap.set("n", "dd", function()
   if vim.api.nvim_get_current_line():match("^%s*$") then
       return '"_dd'

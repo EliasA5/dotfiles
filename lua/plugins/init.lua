@@ -26,7 +26,6 @@ return
     lazy = false,
   },
   {'EliasA5/pastem', config = function() require('pastem').setup() end},
-  {'ggandor/leap.nvim', lazy = false,},
   'stefandtw/quickfix-reflector.vim',
   {
     'nvimdev/template.nvim',
