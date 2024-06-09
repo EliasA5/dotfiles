@@ -27,7 +27,6 @@ return
     'lewis6991/gitsigns.nvim',
     -- tag = 'release' -- To use the latest release (do not use this if you run Neovim nightly or dev builds!)
   },
-  'nvim-tree/nvim-web-devicons',
   'freddiehaddad/feline.nvim',
   'folke/which-key.nvim',
   { 'echasnovski/mini.comment'},
