@@ -16,10 +16,6 @@ return
   {'hrsh7th/cmp-nvim-lsp'},
   {'L3MON4D3/LuaSnip'},
   'folke/neodev.nvim',
-  {
-    'ribru17/bamboo.nvim',
-    lazy = false,
-  },
   {'EliasA5/pastem', config = function() require('pastem').setup() end},
   'stefandtw/quickfix-reflector.vim',
   {
