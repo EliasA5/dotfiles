@@ -6,11 +6,6 @@ return
     dependencies = { 'nvim-lua/plenary.nvim' }
   },
   {
-    'nvim-treesitter/nvim-treesitter',
-    build = ':TSUpdate',
-    dependencies = {'nvim-treesitter/nvim-treesitter-textobjects'}
-  },
-  {
     'szw/vim-maximizer',
     keys = {{"<leader>m", vim.cmd.MaximizerToggle, desc = "toggle maximization"}}
   },
