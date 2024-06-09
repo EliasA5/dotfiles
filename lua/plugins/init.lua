@@ -36,13 +36,6 @@ return
   },
   {'EliasA5/pastem', config = function() require('pastem').setup() end},
   {'ggandor/leap.nvim', lazy = false,},
-  {
-    'numToStr/Navigator.nvim',
-    lazy = false,
-    config = function()
-      require('Navigator').setup()
-    end
-  },
   'otavioschwanck/arrow.nvim',
   'stefandtw/quickfix-reflector.vim',
   {
