@@ -26,7 +26,6 @@ return
   {'hrsh7th/cmp-nvim-lsp'},
   {'L3MON4D3/LuaSnip'},
   'freddiehaddad/feline.nvim',
-  'folke/which-key.nvim',
   'folke/neodev.nvim',
   {
     'ribru17/bamboo.nvim',
