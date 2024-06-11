@@ -44,7 +44,15 @@ function()
   print(path)
   vim.fn.setreg('+', path)
   return path
-end , { desc = "copy pwd to clipboard", })
+end , { desc = "copy full path to clipboard", })
+
+vim.keymap.set("n", "<leader>gc",
+function()
+  local path = vim.fn.expand("%:.")
+  print(path)
+  vim.fn.setreg('+', path)
+  return path
+end , { desc = "copy relative to clipboard", })
 
 -- vim.keymap.set("n", "<leader><leader>", ":w<CR>:so<CR>")
 vim.keymap.set("n", "gw", ":%s/\\s\\+$//e<CR>", { desc = "Remove trailing white spaces", })
