@@ -27,18 +27,3 @@ local function write(osc52)
   return success
 end
 
-vim.api.nvim_create_autocmd({ 'TermRequest' }, {
-  desc = 'Handles OSC 52',
-  callback = function(args)
-    if args.data:match('\027]52;c;') then
-      local to_copy = args.data:gsub('\027]52;c;', '')
-      local osc52 = string.format('\27]52;c;%s\7', to_copy)
-      if os.getenv("TMUX")
-          or os.getenv("TERM"):match("^tmux")
-          or os.getenv("TERM"):match("^screen") then
-        osc52 = string.format('\27Ptmux;\27%s\27\\', osc52)
-      end
-      write(osc52)
-    end
-  end
-})
