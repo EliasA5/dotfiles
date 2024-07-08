@@ -18,8 +18,8 @@ vim.keymap.set("n", "gP", "`[v`]", {desc = "select pasted text"})
 vim.keymap.set({"n", "v"}, "<leader>d", "\"_d")
 vim.keymap.set({"n", "x"}, "x", "\"_x")
 
-vim.keymap.set("n", "<leader>rs", [[:.,$s/\<<C-r><C-w>\>//gcI<Left><Left><Left><Left>]], {desc = "Search and Replace word under cursor"})
-vim.keymap.set("n", "<leader>rl", [[:.,$s/<C-r><C-w>//gcI<Left><Left><Left><Left>]], {desc = "Loosely Search and Replace word under cursor"})
+vim.keymap.set("n", "<leader>rs", [[:%s/\<<C-r><C-w>\>//gcI<Left><Left><Left><Left>]], {desc = "Search and Replace word under cursor"})
+vim.keymap.set("n", "<leader>rl", [[:%s/<C-r><C-w>//gcI<Left><Left><Left><Left>]], {desc = "Loosely Search and Replace word under cursor"})
 
 vim.keymap.set("n", "<leader>/", ":noh<CR>", {desc = "Remove highlight", silent = true, })
 
