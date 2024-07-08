@@ -6,7 +6,7 @@ return {
     end,
     lazy = true,
     ft = {"c", "cpp", "rust", "python", "go", "bash", "sh", "lua"},
-    cmd = {"LspInfo", "LspInstall", "LspUninstall"},
+    cmd = {"LspInfo", "LspInstall", "LspUninstall", "Mason"},
     config = function()
       local on_attach = function(_, bufnr)
         local map = function(mode, keys, func, opts)
