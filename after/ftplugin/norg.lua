@@ -15,3 +15,5 @@ set.shiftwidth = 2
 set.expandtab = true
 set.smarttab = true
 
+vim.cmd("set noswapfile")
+
