@@ -27,3 +27,25 @@ local function write(osc52)
   return success
 end
 
+-- add the following to .bashrc and launch nvim with nvims
+-- nvims () {
+--     if [[ -z "$@" ]]; then
+--         if [[ -f "./Session.vim" ]]; then
+--             nvim -S Session.vim -c 'lua vim.g.savesession = true'
+--         else
+--             nvim -c 'lua vim.g.savesession = true' .
+--         fi
+--     else
+--         nvim "$@"
+--     fi
+-- }
+
+vim.api.nvim_create_autocmd("VimLeavePre", {
+  pattern = "*",
+  callback = function()
+    if vim.g.savesession then
+      vim.api.nvim_command("mks!")
+    end
+  end
+})
+
