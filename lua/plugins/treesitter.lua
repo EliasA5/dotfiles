@@ -32,10 +32,12 @@ return {
           goto_previous_start = {
             ["[["] = "@parameter.inner",
             ["<leader>gpf"] = "@function.outer",
+            ["<leader>gpc"] = "@class.outer",
           },
           goto_next_start = {
             ["]]"] = "@parameter.inner",
             ["<leader>gnf"] = "@function.outer",
+            ["<leader>gnc"] = "@class.outer",
           },
         },
         select = {
