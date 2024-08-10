@@ -19,7 +19,10 @@ return {
         -- map('n', '<leader>gf', vim.lsp.buf.code_action, {desc = "LSP code action"})
         map('n', '<leader>tt', '<cmd>Telescope diagnostics<CR>', { desc = "LSP Diagnostics", noremap = true, silent = true })
         map('n', '<leader>tl', vim.diagnostic.open_float, { desc = "Open diagnostic float", noremap = true, silent = true })
-        map('n', '<leader>rr', vim.lsp.buf.rename, {desc = "Rename symbol under cursor"})
+        map('n', '<leader>rr',
+        function()
+          require("elias.custom.rename").rename({})
+        end, {desc = "Rename symbol under cursor"})
         map('n', 'K', vim.lsp.buf.hover, {desc = "Hover Documentation"})
         map('n', '<M-k>', vim.lsp.buf.signature_help, {desc = "Signature Documentation"})
 
