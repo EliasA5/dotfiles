@@ -1,6 +1,9 @@
 git:
   commit:
     signOff: true
+  paging:
+    colorArg: always
+    pager: delta --dark --paging=never
 os:
   copyToClipboardCmd: >
     if [[ "$TERM" =~ ^(screen|tmux) ]]; then
