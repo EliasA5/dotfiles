@@ -13,3 +13,4 @@ os:
     fi
 gui:
   nerdFontsVersion: "3"
+  switchTabsWithPanelJumpKeys: true
