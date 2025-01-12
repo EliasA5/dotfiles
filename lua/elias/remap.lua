@@ -54,6 +54,18 @@ function()
   return path
 end , { desc = "copy relative to clipboard", })
 
+vim.keymap.set("n", "<leader>gC",
+function()
+  local util = require('lspconfig.util')
+  local relative_path = vim.fn.expand("%:.")
+  local base_dir = util.find_git_ancestor(relative_path) .. "/"
+  local escaped_base_dir = base_dir:gsub("([%-%.%+%[%]%(%)%$%^%%%?%*])", "%%%1")
+  local path = relative_path:gsub(escaped_base_dir, "")
+  print(path)
+  vim.fn.setreg('+', path)
+  return path
+end , { desc = "copy relative to base git directory to clipboard", })
+
 -- vim.keymap.set("n", "<leader><leader>", ":w<CR>:so<CR>")
 vim.keymap.set("n", "gw", ":%s/\\s\\+$//e<CR>", { desc = "Remove trailing white spaces", })
 
