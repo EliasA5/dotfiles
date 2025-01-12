@@ -46,15 +46,32 @@ return {
       require('mason').setup({})
       require('mason-lspconfig').setup({})
       local lspconfig = require('lspconfig')
+      local util = require('lspconfig.util')
 
       local servers = {
         clangd = {},
         pylsp = {
+          root_dir = function(fname)
+            local root_files = {
+              'pyproject.toml',
+              'setup.py',
+              'setup.cfg',
+              'requirements.txt',
+              'Pipfile',
+            }
+            return util.root_pattern(unpack(root_files))(fname) or util.find_git_ancestor(fname)
+          end,
           settings = {
             pylsp = {
               configurationSources = {"flake8"},
               plugins = {
-                flake8 = { enabled = true },
+                flake8 = {
+                  enabled = false,
+                  extendIgnore = {"E501", "W504", "E402"}
+                },
+                autopep8 = { enabled = false },
+                pycodestyle = { enabled = false },
+                pyflakes = { enabled = false },
               }
             }
           }
@@ -63,12 +80,14 @@ return {
           --   root_dir = lspconfig.util.root_pattern('erlang_ls.config', '.git')
           -- },
           lua_ls = {
-            Lua = {
-              workspace = { checkThirdParty = false },
-              telemetry = { enable = false },
-              diagnostics = { disable = { 'missing-fields' } },
-            },
-          },
+            settings = {
+              Lua = {
+                workspace = { checkThirdParty = false },
+                telemetry = { enable = false },
+                diagnostics = { disable = { 'missing-fields' } },
+              },
+            }
+          }
         }
 
         require('neodev').setup()
@@ -85,7 +104,8 @@ return {
             require('lspconfig')[server_name].setup({
               capabilities = capabilities,
               on_attach = on_attach,
-              settings = servers[server_name],
+              root_dir = (servers[server_name] or {}).root_dir,
+              settings = (servers[server_name] or {}).settings,
               filetypes = (servers[server_name] or {}).filetypes,
             })
           end,
