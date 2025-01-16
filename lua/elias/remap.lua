@@ -58,9 +58,15 @@ vim.keymap.set("n", "<leader>gC",
 function()
   local util = require('lspconfig.util')
   local relative_path = vim.fn.expand("%:.")
-  local base_dir = util.find_git_ancestor(relative_path) .. "/"
-  local escaped_base_dir = base_dir:gsub("([%-%.%+%[%]%(%)%$%^%%%?%*])", "%%%1")
-  local path = relative_path:gsub(escaped_base_dir, "")
+  local base_dir = util.find_git_ancestor(relative_path)
+  local path
+  if base_dir == nil then
+    path = relative_path
+  else
+    base_dir = base_dir .. '/'
+    local escaped_base_dir = base_dir:gsub("([%-%.%+%[%]%(%)%$%^%%%?%*])", "%%%1")
+    path = relative_path:gsub(escaped_base_dir, "")
+  end
   print(path)
   vim.fn.setreg('+', path)
   return path
