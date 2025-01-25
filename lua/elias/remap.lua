@@ -56,17 +56,18 @@ end , { desc = "copy relative to clipboard", })
 
 vim.keymap.set("n", "<leader>gC",
 function()
-  local util = require('lspconfig.util')
   local relative_path = vim.fn.expand("%:.")
-  local base_dir = util.find_git_ancestor(relative_path)
+  local base_dir = vim.fs.dirname(vim.fs.find('.git', { path = vim.fn.expand("%:."), upward = true })[1])
   local path
   if base_dir == nil then
     path = relative_path
   else
-    base_dir = base_dir .. '/'
-    local escaped_base_dir = base_dir:gsub("([%-%.%+%[%]%(%)%$%^%%%?%*])", "%%%1")
-    path = relative_path:gsub(escaped_base_dir, "")
+    path = relative_path
+    if base_dir ~= "." then
+      path = path:sub(string.len(base_dir) + 2)
+    end
   end
+
   print(path)
   vim.fn.setreg('+', path)
   return path
