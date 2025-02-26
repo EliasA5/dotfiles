@@ -42,7 +42,16 @@ return {
       ["zX"] = "false",
     },
     autojump = false,
-    filter_kind = false,
+    filter_kind = {
+      "Class",
+      "Constructor",
+      "Enum",
+      "Function",
+      "Interface",
+      "Module",
+      "Method",
+      "Struct",
+    },
     highlight_on_hover = true,
   },
   keys = {
