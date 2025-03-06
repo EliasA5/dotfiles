@@ -46,6 +46,8 @@ return {
                 actions.move_selection_previous, type = "action",
                 opts = { nowait = true, silent = true }
               },
+              ["<C-h>"] = actions.select_horizontal,
+              ["<C-x>"] = false,
               ["<C-p>"] = false,
               ["<C-n>"] = false,
             },
