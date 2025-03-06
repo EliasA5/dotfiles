@@ -7,4 +7,5 @@ require("elias.lazy")
 require("elias.remap")
 require("elias.set")
 require("elias.autocommands")
+require("elias.timer")
 
