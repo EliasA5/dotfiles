@@ -1,5 +1,5 @@
 return {
-  {'echasnovski/mini.pairs',   config = function() require('mini.pairs').setup() end },
+  {'echasnovski/mini.pairs', version = false, opts = {}},
   {
     'echasnovski/mini.indentscope',
     opts = {
@@ -11,5 +11,7 @@ return {
       },
     }
   },
-  {'echasnovski/mini.splitjoin', version = '*' , config = function() require('mini.splitjoin').setup() end },
+  {'echasnovski/mini.splitjoin', version = false, opts = {}},
+  {'echasnovski/mini.cursorword', version = false, opts = {}},
+  {'echasnovski/mini.notify', version = false, opts = {}},
 }
