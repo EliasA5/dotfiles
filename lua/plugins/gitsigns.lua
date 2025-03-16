@@ -44,7 +44,10 @@ return {
   },
   keys = {
     {"<leader>gt", ":Gitsigns toggle_signs<CR>" , "n", silent = true, desc = "toggle gitsigns"},
-    {"<leader>tb", function() print(require("gitsigns").toggle_current_line_blame()) end, "n", desc = "toggle git blame on line"},
+    {"<leader>tb", function() 
+      local enabled = require("gitsigns").toggle_current_line_blame()
+      vim.notify("Blame current line enabled: " .. tostring(enabled))
+     end, "n", desc = "toggle git blame on line"},
   }
 }
 
