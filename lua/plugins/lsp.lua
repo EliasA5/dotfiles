@@ -87,7 +87,14 @@ return {
                 diagnostics = { disable = { 'missing-fields' } },
               },
             }
-          }
+          },
+          ruff = {
+            init_options = {
+              settings = {
+
+              }
+            }
+          },
         }
 
         require('neodev').setup()
