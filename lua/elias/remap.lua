@@ -94,3 +94,24 @@ vim.keymap.set("n", "dd", function()
   end
 end, { expr = true, desc = "Delete current line, copy if not empty" })
 
+
+-- All the ways to start a search, with a description
+local mark_search_keys = {
+  ["/"] = "Search forward",
+  ["?"] = "Search backward",
+  ["*"] = "Search current word (forward)",
+  ["#"] = "Search current word (backward)",
+}
+
+-- Before starting the search, set a mark `s`
+for key, desc in pairs(mark_search_keys) do
+  vim.keymap.set("n", key, function()
+    return "ms" .. key
+  end, { expr = true, desc = desc })
+end
+
+-- Clear search highlight when jumping back to beginning
+vim.keymap.set("n", "`s", function()
+  vim.cmd("normal! `s")
+  vim.cmd.nohlsearch()
+end)
