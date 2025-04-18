@@ -21,7 +21,7 @@ vim.keymap.set({"n", "x"}, "x", "\"_x")
 vim.keymap.set("n", "<leader>rs", [[:%s/\<<C-r><C-w>\>//gcI<Left><Left><Left><Left>]], {desc = "Search and Replace word under cursor"})
 vim.keymap.set("n", "<leader>rl", [[:%s/<C-r><C-w>//gcI<Left><Left><Left><Left>]], {desc = "Loosely Search and Replace word under cursor"})
 
-vim.keymap.set("n", "<leader>/", ":noh<CR>", {desc = "Remove highlight", silent = true, })
+vim.keymap.set("n", "<leader>/", vim.cmd.nohlsearch, {desc = "Remove highlight", silent = true, })
 
 vim.keymap.set("n", "o", "o<Esc>")
 vim.keymap.set("n", "O", "O<Esc>")
