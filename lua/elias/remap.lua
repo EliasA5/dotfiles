@@ -27,8 +27,8 @@ vim.keymap.set("n", "o", "o<Esc>")
 vim.keymap.set("n", "O", "O<Esc>")
 
 -- Remap for dealing with word wrap
-vim.keymap.set("n", "k", "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true, })
-vim.keymap.set("n", "j", "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true, })
+vim.keymap.set("n", "k", function() return (vim.v.count > 0 and "m'" .. vim.v.count .. "k") or "gk" end, { expr = true, silent = true })
+vim.keymap.set("n", "j", function() return (vim.v.count > 0 and "m'" .. vim.v.count .. "j") or "gj" end, { expr = true, silent = true })
 
 vim.keymap.set("n", "<C-Left>", "4<C-w><")
 vim.keymap.set("n", "<C-Right>", "4<C-w>>")
