@@ -20,3 +20,12 @@ os:
 gui:
   nerdFontsVersion: "3"
   switchTabsWithPanelJumpKeys: true
+
+customCommands:
+- key: "U"
+  command: "git submodule update --init --recursive"
+  context: "localBranches, files"
+  description: "Update submodules"
+  loadingText: "Updating Submodules..."
+  stream: true
+
