@@ -7,15 +7,15 @@ git:
 os:
   openLink: >
     if [[ "$TERM" =~ ^(screen|tmux) ]]; then
-      printf "\033Ptmux;\033\033]52;c;$(printf {{link}}| python -c "import requests; import sys; sys.stdout.write(requests.utils.requote_uri(sys.stdin.read()))" | base64 -w 0)\a\033\\" > /dev/tty
+      printf "\033Ptmux;\033\033]52;c;$(echo -n {{link}} | base64 -w 0)\a\033\\" > /dev/tty
     else
-      printf "\033]52;c;$(printf {{link}} | python -c "import requests; import sys; sys.stdout.write(requests.utils.requote_uri(sys.stdin.read()))" | base64 -w 0)\a" > /dev/tty
+      printf "\033]52;c;$(echo -n {{link}} | base64 -w 0)\a" > /dev/tty
     fi
   copyToClipboardCmd: >
     if [[ "$TERM" =~ ^(screen|tmux) ]]; then
-      printf "\033Ptmux;\033\033]52;c;$(printf {{text}} | python -c "import requests; import sys; sys.stdout.write(requests.utils.requote_uri(sys.stdin.read()))" | base64 -w 0)\a\033\\" > /dev/tty
+      printf "\033Ptmux;\033\033]52;c;$(echo -n {{text}} | base64 -w 0)\a\033\\" > /dev/tty
     else
-      printf "\033]52;c;$(printf {{text}} | python -c "import requests; import sys; sys.stdout.write(requests.utils.requote_uri(sys.stdin.read()))" | base64 -w 0)\a" > /dev/tty
+      printf "\033]52;c;$(echo -n {{text}} | base64 -w 0)\a" > /dev/tty
     fi
 gui:
   nerdFontsVersion: "3"
