@@ -68,8 +68,29 @@ return {
 
     version = '1.*',
     opts = {
-      keymap = { preset = 'enter' },
-
+      keymap = {
+        preset = 'enter',
+        ['<C-y>'] = { 'select_and_accept' },
+        ['<C-space>'] = { 'show', 'show_documentation', 'hide_documentation' },
+        ['<C-e>'] = { 'hide', 'fallback' },
+        ['<CR>'] = { 'accept', 'fallback' },
+        ['<Tab>'] = {
+          function(cmp)
+            if cmp.snippet_active() then return cmp.snippet_forward()
+            else return cmp.select_next() end
+          end, 'fallback' },
+        ['<S-Tab>'] = { function(cmp)
+          if cmp.snippet_active() then return cmp.snippet_backward()
+          else return cmp.select_prev() end
+        end, 'fallback' },
+        ['<Up>'] = { 'select_prev', 'fallback' },
+        ['<Down>'] = { 'select_next', 'fallback' },
+        ['<C-p>'] = { 'select_prev', 'fallback_to_mappings' },
+        ['<C-n>'] = { 'select_next', 'fallback_to_mappings' },
+        ['<C-b>'] = { 'scroll_documentation_up', 'fallback' },
+        ['<C-f>'] = { 'scroll_documentation_down', 'fallback' },
+        ['<C-k>'] = { 'show_signature', 'hide_signature', 'fallback' },
+      },
       appearance = {
         nerd_font_variant = 'mono'
       },
@@ -77,9 +98,10 @@ return {
       completion = {
         documentation = { auto_show = true },
         ghost_text = { enabled = true },
-        -- list = {
-        --   selection = { preselect = false, auto_insert = true }
-        -- }
+        trigger = { show_in_snippet = false},
+        list = {
+          selection = { preselect = false, auto_insert = true }
+        }
       },
 
       -- Default list of enabled providers defined so that you can extend it
