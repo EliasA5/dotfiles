@@ -113,3 +113,44 @@ vim.keymap.set("n", "`s", function()
   vim.cmd("normal! `s")
   vim.cmd.nohlsearch()
 end)
+
+--- @param lines string[]
+--- @return number
+local function get_indent(lines)
+  local indent = 1 -- lua is one-indexed
+  local indent_chars = { [" "] = true, ["\t"] = true }
+  for char_idx = 1, #lines[1] do
+    for _, line in ipairs(lines) do
+      if #line > 0 then -- only check on non-empty lines
+        local char = lines[1]:sub(char_idx, char_idx)
+        if indent_chars[char] == nil then
+          return indent
+        end
+      end
+    end
+    indent = indent + 1
+  end
+end
+
+vim.keymap.set("v", "<leader>y", function()
+  -- get selected text
+  local v_start = vim.fn.getpos("v")[2]
+  local v_end = vim.fn.getpos(".")[2]
+  local selected = vim.api.nvim_buf_get_lines(0, math.min(v_start, v_end) - 1, math.max(v_start, v_end), true)
+
+  -- trim each line
+  -- for i, line in ipairs(selected) do
+  --   selected[i] = vim.fn.trim(line)
+  -- end
+  local indent = get_indent(selected)
+  for i, line in ipairs(selected) do
+      selected[i] = line:sub(indent)
+  end
+
+  local text = table.concat(selected, "\n")
+
+  -- put the result in the + register
+  vim.fn.setreg("+", text)
+  -- launch <esc> to return to normal mode
+  vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes("<Esc>", true, true, true), "n", true)
+end, { noremap = true, silent = true })
