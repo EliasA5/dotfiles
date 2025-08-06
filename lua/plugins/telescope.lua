@@ -21,7 +21,19 @@ end
 return {
   'nvim-telescope/telescope.nvim',
   branch = '0.1.x',
-  dependencies = {'nvim-lua/plenary.nvim'},
+  dependencies = {
+    'nvim-lua/plenary.nvim',
+    {
+      'nvim-telescope/telescope-fzf-native.nvim',
+      build = 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release'
+    },
+    {
+      "nvim-telescope/telescope-live-grep-args.nvim" ,
+      -- This will not install any breaking changes.
+      -- For major updates, this must be adjusted manually.
+      version = "^1.0.0",
+    },
+  },
   lazy = true,
   keys = {
     make_bind(ff),
@@ -54,11 +66,21 @@ return {
           },
         },
       },
+      extensions = {
+        fzf = {
+          fuzzy = true,
+          override_generic_sorter = true,
+          override_file_sorter = true,
+          case_mode = "smart_case",        -- or "ignore_case" or "respect_case"
+        }
+      }
     })
+    require('telescope').load_extension('fzf')
+    require('telescope').load_extension('live_grep_args')
 
     local builtin = require('telescope.builtin')
     make_bind(ff, builtin.find_files)
-    make_bind(fg, builtin.live_grep)
+    make_bind(fg, function() require('telescope').extensions.live_grep_args.live_grep_args() end)
     make_bind(cp, builtin.git_files)
     make_bind(fw, builtin.grep_string)
     make_bind(gb, builtin.buffers)
