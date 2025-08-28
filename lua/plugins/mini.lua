@@ -60,4 +60,5 @@ return {
       options = {reindent_linewise = true},
     }
   },
+  { 'nvim-mini/mini.jump', version = false, opts = {}},
 }
