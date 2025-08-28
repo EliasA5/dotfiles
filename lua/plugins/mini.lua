@@ -1,7 +1,7 @@
 return {
-  {'echasnovski/mini.pairs', version = false, opts = {}},
+  {'nvim-mini/mini.pairs', version = false, opts = {}},
   {
-    'echasnovski/mini.indentscope',
+    'nvim-mini/mini.indentscope',
     opts = {
       mappings = {
         object_scope = 'ii',
@@ -11,10 +11,10 @@ return {
       },
     }
   },
-  {'echasnovski/mini.splitjoin', version = false, opts = {}},
-  {'echasnovski/mini.cursorword', version = false, opts = {}},
+  {'nvim-mini/mini.splitjoin', version = false, opts = {}},
+  {'nvim-mini/mini.cursorword', version = false, opts = {}},
   {
-    'echasnovski/mini.notify',
+    'nvim-mini/mini.notify',
     version = false,
     config = function ()
       local notify = require('mini.notify')
@@ -25,5 +25,21 @@ return {
         INFO = { duration = 2000 },
       })
     end,
+  },
+  {
+    'nvim-mini/mini.comment',
+    opts = {
+      options = {
+        ignore_blank_line = true,
+        start_of_line = false,
+        pad_comment_parts = true,
+      },
+      -- Module mappings. Use `''` (empty string) to disable one.
+      mappings = {
+        comment = 'gc',
+        comment_line = 'gcc',
+        textobject = 'gc',
+      },
+    }
   },
 }
