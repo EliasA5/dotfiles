@@ -1,11 +1,12 @@
 git:
   commit:
     signOff: true
-  paging:
-    colorArg: always
-    pager: delta --dark --paging=never
+  pagers:
+    - colorArg: always
+      pager: delta --dark --paging=never --line-numbers --hyperlinks --hyperlinks-file-link-format="lazygit-edit://{path}:{line}"
   localBranchSortOrder: recency
 os:
+  editPreset: nvim-remote
   openLink: >
     if [[ "$TERM" =~ ^(screen|tmux) ]]; then
 
@@ -34,3 +35,5 @@ customCommands:
     description: "Update submodules"
     loadingText: "Updating Submodules..."
     output: log
+
+promptToReturnFromSubprocess: false
