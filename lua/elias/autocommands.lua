@@ -15,18 +15,6 @@ vim.api.nvim_create_autocmd('TextYankPost', {
     pattern = '*',
 })
 
-local function write(osc52)
-  local success = false
-
-  if vim.fn.filewritable('/dev/fd/2') == 1 then
-    success = vim.fn.writefile({osc52}, '/dev/fd/2', 'b') == 0
-  else
-    success = vim.fn.chansend(vim.v.stderr, osc52) > 0
-  end
-
-  return success
-end
-
 -- add the following to .bashrc and launch nvim with nvims
 -- nvims () {
 --     if [[ -z "$@" ]]; then

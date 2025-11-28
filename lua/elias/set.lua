@@ -56,3 +56,22 @@ vim.cmd([[let &t_Ce = "\e[4:0m"]])
 -- Enable spell check
 vim.opt.spell = true
 vim.opt.spelllang = { "en_us" }
+
+-- vim.g.clipboard = 'osc52'
+
+-- if vim.env.TMUX ~= nil then
+--   local copy = {'tmux', 'load-buffer', '-w', '-'}
+--   local paste = {'bash', '-c', 'tmux refresh-client -l && sleep 0.05 && tmux save-buffer -'}
+--   vim.g.clipboard = {
+--     name = 'tmux',
+--     copy = {
+--       ['+'] = copy,
+--       ['*'] = copy,
+--     },
+--     paste = {
+--       ['+'] = paste,
+--       ['*'] = paste,
+--     },
+--     cache_enabled = 0,
+--   }
+-- end
