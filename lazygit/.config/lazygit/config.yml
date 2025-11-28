@@ -1,0 +1,39 @@
+git:
+  commit:
+    signOff: true
+  pagers:
+    - colorArg: always
+      pager: delta --dark --paging=never --line-numbers --hyperlinks --hyperlinks-file-link-format="lazygit-edit://{path}:{line}"
+  localBranchSortOrder: recency
+os:
+  editPreset: nvim
+  openLink: >
+    if [[ "$TERM" =~ ^(screen|tmux) ]]; then
+
+      printf "\033Ptmux;\033\033]52;c;$(echo -n {{link}} | base64 -w 0)\a\033\\" > /dev/tty
+    else
+
+      printf "\033]52;c;$(echo -n {{link}} | base64 -w 0)\a" > /dev/tty
+    fi
+
+  copyToClipboardCmd: >
+    if [[ "$TERM" =~ ^(screen|tmux) ]]; then
+
+      printf "\033Ptmux;\033\033]52;c;$(echo -n {{text}} | base64 -w 0)\a\033\\" > /dev/tty
+    else
+
+      printf "\033]52;c;$(echo -n {{text}} | base64 -w 0)\a" > /dev/tty
+    fi
+
+gui:
+  nerdFontsVersion: "3"
+  switchTabsWithPanelJumpKeys: true
+customCommands:
+  - key: "U"
+    command: "git submodule update --init --recursive"
+    context: "localBranches, files"
+    description: "Update submodules"
+    loadingText: "Updating Submodules..."
+    output: log
+
+promptToReturnFromSubprocess: false
