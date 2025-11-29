@@ -1,0 +1,77 @@
+local set = vim.opt
+set.clipboard = "unnamedplus"
+
+set.guicursor = "n-v-c-sm:block,i-ci-ve:ver50,r-cr-o:hor50"
+
+set.number = true
+set.relativenumber = true
+
+set.tabstop = 4
+set.softtabstop = 0
+set.shiftwidth = 0
+set.expandtab = true
+set.smarttab = true
+
+set.autoindent = true
+set.smartindent = true
+-- Enable break indent
+set.breakindent = true
+
+set.termguicolors = true
+
+set.scrolloff = 8
+-- set.signcolumn = "number"
+
+set.hidden = true
+set.incsearch = true
+
+set.splitright = true
+set.splitbelow = true
+
+-- Save undo history
+set.undofile = true
+
+-- Set completeopt to have a better completion experience
+set.completeopt = 'menuone,noselect'
+
+-- set termguicolors to enable highlight groups
+set.termguicolors = true
+
+-- add borders to all floating windows
+local orig_util_open_floating_preview = vim.lsp.util.open_floating_preview
+function vim.lsp.util.open_floating_preview(contents, syntax, opts, ...)
+  opts = opts or {}
+  opts.border = opts.border or "rounded"
+  return orig_util_open_floating_preview(contents, syntax, opts, ...)
+end
+
+-- Use -uuu to make ripgrep not do its default filtering
+set.grepprg = "rg --vimgrep"
+set.grepformat = '%f:%l:%c:%m'
+
+-- Undercurl
+vim.cmd([[let &t_Cs = "\e[4:3m"]])
+vim.cmd([[let &t_Ce = "\e[4:0m"]])
+
+-- Enable spell check
+vim.opt.spell = true
+vim.opt.spelllang = { "en_us" }
+
+-- vim.g.clipboard = 'osc52'
+
+-- if vim.env.TMUX ~= nil then
+--   local copy = {'tmux', 'load-buffer', '-w', '-'}
+--   local paste = {'bash', '-c', 'tmux refresh-client -l && sleep 0.05 && tmux save-buffer -'}
+--   vim.g.clipboard = {
+--     name = 'tmux',
+--     copy = {
+--       ['+'] = copy,
+--       ['*'] = copy,
+--     },
+--     paste = {
+--       ['+'] = paste,
+--       ['*'] = paste,
+--     },
+--     cache_enabled = 0,
+--   }
+-- end
