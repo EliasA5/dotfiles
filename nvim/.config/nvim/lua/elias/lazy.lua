@@ -11,5 +11,23 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
-return require('lazy').setup("plugins")
-
+require("lazy").setup({
+  spec = {
+    { import = "plugins" },
+  },
+  pkg = {
+    enabled = true,
+    cache = vim.fn.stdpath("state") .. "/lazy/pkg-cache.lua",
+    -- the first package source that is found for a plugin will be used.
+    sources = {
+      "lazy",
+      "rockspec", -- will only be used when rocks.enabled is true
+      "packspec",
+    },
+  },
+  rocks = {
+    enabled = true,
+    root = vim.fn.stdpath("data") .. "/lazy-rocks",
+    server = "https://nvim-neorocks.github.io/rocks-binaries/",
+  },
+})
