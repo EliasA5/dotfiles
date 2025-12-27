@@ -1,8 +1,10 @@
 return {
-  'nvim-neorg/neorg',
+  "nvim-neorg/neorg",
+  lazy = false,
+  -- version = "*",
+  version = false,
   build = ':Neorg sync-parsers',
-  dependencies = { 'nvim-lua/plenary.nvim' },
-  version = "7.*",
+  config = true,
   ft = "norg",
   opts = {
     load = {
