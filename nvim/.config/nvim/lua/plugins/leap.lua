@@ -8,6 +8,11 @@ return {
       end,
       {"n", "x", "o"},
     }
+  },
+  opts = {
+    vim_opts = {
+      ['go.ignorecase'] = true
+    }
   }
 }
 
