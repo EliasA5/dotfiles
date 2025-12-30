@@ -27,6 +27,10 @@ return {
         return ok
       end
 
+      local function is_installed(lang)
+        return require('nvim-treesitter').get_installed()[lang] ~= nil
+      end
+
       -- Install core parsers after lazy.nvim finishes loading all plugins
       vim.api.nvim_create_autocmd('User', {
         group = group,
@@ -74,7 +78,7 @@ return {
           local lang = vim.treesitter.language.get_lang(event.match) or event.match
           local buf = event.buf
 
-          if not enable_treesitter(buf, lang) then
+          if lang ~= nil and not is_installed(lang) then
             -- Parser not available, queue buffer (set handles duplicates)
             waiting_buffers[lang] = waiting_buffers[lang] or {}
             waiting_buffers[lang][buf] = true
