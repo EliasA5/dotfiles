@@ -57,6 +57,9 @@ vim.cmd([[let &t_Ce = "\e[4:0m"]])
 vim.opt.spell = true
 vim.opt.spelllang = { "en_us" }
 
+-- review changes in split view when replacing
+vim.opt.inccommand = "split"
+
 -- vim.g.clipboard = 'osc52'
 
 -- if vim.env.TMUX ~= nil then
