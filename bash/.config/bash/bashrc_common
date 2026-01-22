@@ -1,0 +1,156 @@
+# .bashrc
+
+# User specific aliases and functions
+debug_bash() {
+    # open file descriptor 5 such that anything written to /dev/fd/5
+    # is piped through ts and then to /tmp/timestamps
+    exec 5> >(ts -i "%.s" >> /tmp/timestamps)
+
+    # https://www.gnu.org/software/bash/manual/html_node/Bash-Variables.html
+    export BASH_XTRACEFD="5"
+
+    # Enable tracing
+    set -x
+}
+#debug_bash
+
+alias rm='rm -i'
+alias cp='cp -i'
+alias mv='mv -i'
+alias ll='ls -lah'
+
+source ~/.bash_completion.d/complete_alias
+
+nvimc() {
+    local CONFIG="${XDG_CONFIG_HOME:-~/.config}"
+    cd $CONFIG/nvim
+}
+alias download='curl -LO'
+alias untar='tar -xvzf'
+alias tmux='tmux -u'
+alias tmuxa='tmux -u attach -t gen || tmux new-session -s gen'
+alias lg='lazygit'
+alias :q='exit'
+alias ssn='ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null'
+alias scpn='scp -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null'
+alias s="source ~/.bashrc"
+alias r="echo -e '\0033\0143'"
+alias venv="source venv/bin/activate"
+alias dc="docker-compose"
+alias killall="killall --user $USER"
+alias curse="tput cnorm"
+complete -F _complete_alias untar
+
+function cat_cmd
+{
+    if command -v bat &> /dev/null
+    then
+        bat --paging=never $@
+    elif command -v batcat &> /dev/null
+    then
+        batcat --paging=never $@
+    else
+        \cat $@
+    fi
+}
+
+alias cat=cat_cmd
+
+PATH="$HOME/bin:$HOME/.local/bin:$PATH"
+
+nvims () {
+    if [[ -z "$@" ]]; then
+        if [[ -f "./Session.vim" ]]; then
+            nvim -S Session.vim -c 'lua vim.g.savesession = true'
+        else
+            nvim -c 'lua vim.g.savesession = true' .
+        fi
+    else
+        nvim "$@"
+    fi
+}
+
+cd_bash() {
+    pushd $1
+    bash
+    popd
+    sudo rm -rf $1
+}
+
+merge_files() {
+    for file in $(ls | cut -d'.' -f1 | uniq)t
+    do
+        CATCMD='cat'
+        ls ${file}.gz &> /dev/null
+        if [ $? -eq 0 ]; then
+            CATCMD='zcat'
+        fi
+        $CATCMD ${file}.* > ${file}.all 2> /dev/null
+    done
+    ls *.all
+}
+
+export EDITOR=nvim
+
+copy_osc52() {
+    local input=$(</dev/stdin)
+    if [[ "$TERM" =~ ^(screen|tmux) ]]; then
+      printf "\033Ptmux;\033\033]52;c;$(printf "$input" | base64 -w 0)\a\033\\" > /dev/tty
+    else
+      printf "\033]52;c;$(printf "$input" | base64 -w 0)\a" > /dev/tty
+    fi
+}
+alias c=copy_osc52
+
+export -f copy_osc52
+
+export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow --exclude .git'
+export FZF_CTRL_T_OPTS="
+  --walker-skip .git,node_modules,target
+  --preview 'cat -n --color=always {}'
+  --bind 'ctrl-/:change-preview-window(down|hidden|)'"
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+# CTRL-Y to copy the command into clipboard using pbcopy
+export FZF_CTRL_R_OPTS="
+  --bind 'ctrl-y:execute(echo -n {2..} | copy_osc52)+abort'
+  --color header:italic
+  --header 'Press CTRL-Y to copy command into clipboard'"
+export FZF_ALT_C_OPTS="
+  --walker-skip .git,node_modules,target
+  --preview 'tree -C {}'"
+eval "$(fzf --bash)"
+
+# history shenanigans
+export HISTFILESIZE=-1
+export HISTSIZE=-1
+export HISTTIMEFORMAT="%F %T `hostname` `whoami` "
+export PROMPT_COMMAND='history -a'
+
+# If there are multiple matches for completion, Tab should cycle through them
+bind 'TAB:menu-complete'
+
+# And Shift-Tab should cycle backwards
+bind '"\e[Z": menu-complete-backward'
+
+# Perform partial (common) completion on the first Tab press, only start
+# cycling full results on the second Tab press (from bash version 5)
+bind "set menu-complete-display-prefix on"
+
+# Display a list of the matching files
+bind "set show-all-if-ambiguous on"
+
+# Cycle through history based on characters already typed on the line
+bind '"\e[A":history-search-backward'
+bind '"\e[B":history-search-forward'
+
+# fzf bash completion
+source ~/.fzf-bash-completion.sh
+bind -x '"\t": fzf_bash_completion'
+FZF_COMPLETION_AUTO_COMMON_PREFIX=true
+FZF_COMPLETION_AUTO_COMMON_PREFIX_PART=true
+
+# put this uncommented at the end of .bashrc
+# XDG_CONFIG_HOME=~/.config
+# if [ -f $XDG_CONFIG_HOME/bash/bashrc_common ]; then
+#     source $XDG_CONFIG_HOME/bash/bashrc_common
+# fi
