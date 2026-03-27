@@ -39,9 +39,6 @@ return {
       row = 0,
       col = 1
     },
-    yadm = {
-      enable = false
-    },
   },
   keys = {
     {"<leader>gt", ":Gitsigns toggle_signs<CR>" , "n", silent = true, desc = "toggle gitsigns"},
