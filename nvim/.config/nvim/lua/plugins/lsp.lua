@@ -52,7 +52,7 @@ return {
     end
   },
   {'williamboman/mason-lspconfig.nvim', lazy = true},
-  {'neovim/nvim-lspconfig', lazy = true},
+  {'neovim/nvim-lspconfig', lazy = false},
   {
     'folke/lazydev.nvim',
     ft = 'lua',
