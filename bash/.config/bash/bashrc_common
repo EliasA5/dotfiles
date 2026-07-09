@@ -163,3 +163,5 @@ FZF_COMPLETION_AUTO_COMMON_PREFIX_PART=true
 # if [ -f $XDG_CONFIG_HOME/bash/bashrc_common ]; then
 #     source $XDG_CONFIG_HOME/bash/bashrc_common
 # fi
+
+# vim: set ft=bash :
