@@ -150,7 +150,11 @@ FZF_COMPLETION_AUTO_COMMON_PREFIX=true
 FZF_COMPLETION_AUTO_COMMON_PREFIX_PART=true
 
 # put this uncommented at the end of .bashrc
-# XDG_CONFIG_HOME=~/.config
+# HOME_DIR=~
+# export XDG_CONFIG_HOME="$HOME_DIR/.config"
+# export XDG_DATA_HOME="$HOME_DIR/.local/share"
+# export XDG_CACHE_HOME="$HOME_DIR/.cache"
+# export XDG_STATE_HOME="$HOME_DIR/.local/state"
 # if [ -f $XDG_CONFIG_HOME/bash/bashrc_common ]; then
 #     source $XDG_CONFIG_HOME/bash/bashrc_common
 # fi
