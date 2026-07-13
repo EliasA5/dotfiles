@@ -28,18 +28,17 @@ return {
           end
 
           map('n', '<leader>gf', vim.lsp.buf.code_action, {desc = "LSP code action"})
-          map('n', '<leader>tt', '<cmd>Telescope diagnostics<CR>', { desc = "LSP Diagnostics", noremap = true, silent = true })
+          map('n', '<leader>tt', Snacks.picker.diagnostics_buffer, { desc = "LSP Diagnostics", noremap = true, silent = true })
           map('n', '<leader>tl', vim.diagnostic.open_float, { desc = "Open diagnostic float", noremap = true, silent = true })
           map('n', '<leader>rr', vim.lsp.buf.rename, {desc = "Rename symbol under cursor"})
           map('n', 'K', vim.lsp.buf.hover, {desc = "Hover Documentation"})
           map('n', '<M-k>', vim.lsp.buf.signature_help, {desc = "Signature Documentation"})
 
-          local builtin = require('telescope.builtin')
-          map('n', 'gd', builtin.lsp_definitions, {desc = "LSP Defnition"})
-          map('n', 'gD', builtin.lsp_type_definitions, {desc = "LSP Type Definition"})
-          map('n', 'gr', builtin.lsp_references, {desc = "LSP References"})
-          map('n', '<leader>fc', builtin.lsp_incoming_calls, {desc = "Fuzzy find function calls"})
-          -- vim.keymap.set('n', 'gi', builtin.lsp_implementations, {desc = "LSP Implementation"})
+          map('n', 'gd', Snacks.picker.lsp_definitions, {desc = "LSP Defnition"})
+          map('n', 'gD', Snacks.picker.lsp_declarations, {desc = "LSP Type Definition"})
+          map('n', 'gr', Snacks.picker.lsp_references, { nowait = true, desc = "LSP References"})
+          map('n', 'fc', Snacks.picker.lsp_incoming_calls, {desc = "Fuzzy find function calls"})
+          map('n', 'gi', Snacks.picker.lsp_implementations, {desc = "LSP Implementation"})
 
           local virtual_text = false
           vim.diagnostic.config({ virtual_text = virtual_text, })
