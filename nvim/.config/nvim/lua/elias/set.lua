@@ -13,7 +13,7 @@ set.expandtab = true
 set.smarttab = true
 
 set.autoindent = true
-set.smartindent = true
+set.smartindent = false
 -- Enable break indent
 set.breakindent = true
 
