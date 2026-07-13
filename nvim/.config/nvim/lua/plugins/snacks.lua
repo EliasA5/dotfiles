@@ -71,6 +71,7 @@ return {
         )
         vim.keymap.set("n", "<c-t>", function() Snacks.terminal(nil, {win = { border = "rounded", position = "float"}}) end, { desc = "Toggle Terminal", silent = true })
         vim.keymap.set("t", "<c-t>", "<cmd>close<CR>", { desc = "Hide Terminal" })
+        vim.keymap.set("n", "<leader>.",  function() Snacks.scratch() end, { desc = "Toggle Scratch Buffer" } )
       end,
     })
   end,
