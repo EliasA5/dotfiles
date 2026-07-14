@@ -7,6 +7,9 @@ local lazygit = function ()
         -- and integrate edit with the current neovim instance
         configure = true,
         theme_path = vim.fs.normalize(vim.fn.stdpath("cache") .. "/lazygit-theme.yml"),
+        config = {
+          os = { editPreset = "nvim" },
+        },
         theme = {
           [241]                      = { fg = "Special" },
           activeBorderColor          = { fg = "MatchParen", bold = true },

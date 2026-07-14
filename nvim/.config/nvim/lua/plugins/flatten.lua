@@ -4,8 +4,7 @@ return {
   lazy = false,
   priority = 1001,
   opts = function()
-    ---@type Terminal?
-    local saved_terminal
+    local saved_terminal_win
 
     return {
       window = {
@@ -14,29 +13,26 @@ return {
       hooks = {
         should_block = function(argv)
           -- block if we are diffing between files, like in git commit etc
-          return vim.tbl_contains(argv, "-d")
+          return require("flatten").hooks.should_block(argv)
         end,
         pre_open = function()
-          local term = require("toggleterm.terminal")
-          local termid = term.get_focused_id()
-          saved_terminal = term.get(termid)
+          if vim.bo.filetype == "snacks_terminal" then
+            saved_terminal_win = vim.api.nvim_get_current_win()
+          end
         end,
         post_open = function(bufnr, winnr, ft, is_blocking)
-          if is_blocking and saved_terminal then
-            saved_terminal:close()
-          elseif winnr ~= nil then
+          -- Hide the terminal so we can see the opened file
+          if saved_terminal_win and vim.api.nvim_win_is_valid(saved_terminal_win) then
+            vim.api.nvim_win_close(saved_terminal_win, true)
+          end
+          saved_terminal_win = nil
+
+          -- Focus the newly opened file window in standard Normal mode
+          if winnr ~= nil then
             vim.api.nvim_set_current_win(winnr)
           end
         end,
-        block_end = function()
-          -- After blocking ends (for a git commit, etc), reopen the terminal
-          vim.schedule(function()
-            if saved_terminal then
-              saved_terminal:open()
-              saved_terminal = nil
-            end
-          end)
-        end,
+        block_end = function() end,
       },
     }
   end,
