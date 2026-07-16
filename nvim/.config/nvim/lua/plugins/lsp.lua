@@ -35,7 +35,8 @@ return {
           map('n', '<M-k>', vim.lsp.buf.signature_help, {desc = "Signature Documentation"})
 
           map('n', 'gd', Snacks.picker.lsp_definitions, {desc = "LSP Defnition"})
-          map('n', 'gD', Snacks.picker.lsp_declarations, {desc = "LSP Type Definition"})
+          map('n', 'gD', Snacks.picker.lsp_declarations, {desc = "LSP Type declarations"})
+          map('n', 'gt', Snacks.picker.lsp_type_definitions, {desc = "LSP Type Definition"})
           map('n', 'gr', Snacks.picker.lsp_references, { nowait = true, desc = "LSP References"})
           map('n', 'fc', Snacks.picker.lsp_incoming_calls, {desc = "Fuzzy find function calls"})
           map('n', 'gi', Snacks.picker.lsp_implementations, {desc = "LSP Implementation"})
