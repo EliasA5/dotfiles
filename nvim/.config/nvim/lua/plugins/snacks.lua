@@ -71,7 +71,7 @@ return {
     explorer = { enabled = false },
     indent = { enabled = false },
     input = { enabled = false },
-    picker = { enabled = true, main = { file = false , current = true} },
+    picker = { enabled = true, main = { file = false , current = true}, sources = { smart = { filter = { cwd = true }, }} },
     notifier = { enabled = false },
     quickfile = { enabled = true },
     scope = { enabled = false },
