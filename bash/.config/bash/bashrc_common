@@ -27,11 +27,17 @@ nvimc() {
     local CONFIG="${XDG_CONFIG_HOME:-~/.config}"
     cd $CONFIG/nvim
 }
+tmuxc() {
+    local CONFIG="${XDG_CONFIG_HOME:-~/.config}"
+    cd $CONFIG/tmux
+}
+
 alias download='curl -LO'
 alias untar='tar -xvzf'
 alias tmux='tmux -u'
 alias tmuxa='tmux -u attach -t gen || tmux new-session -s gen'
 alias lg='lazygit'
+alias dc='docker-compose'
 alias :q='exit'
 alias ssn='ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null'
 alias scpn='scp -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null'
