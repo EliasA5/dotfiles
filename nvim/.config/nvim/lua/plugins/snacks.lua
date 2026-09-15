@@ -44,7 +44,13 @@ local function make_keybind(opts, fun)
 end
 
 local init_picker = function ()
-  make_keybind(ff, Snacks.picker.smart)
+  make_keybind(ff,
+    function()
+      vim.schedule(function()
+        Snacks.picker.smart()
+      end)
+    end
+  )
   make_keybind(fg, Snacks.picker.grep)
   make_keybind(cp, Snacks.picker.git_files)
   make_keybind(fw, Snacks.picker.grep_word)
