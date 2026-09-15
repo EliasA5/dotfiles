@@ -33,6 +33,17 @@ return {
         highlight = { enable = true },
         indent = { enable = true },
         fold = { enable = false },
+        incremental_selection = {
+          enable = true,
+          -- set value to `false` to disable individual mapping
+          -- node_decremental captures both node_incremental and scope_incremental
+          keymaps = {
+            init_selection = 'gnn',
+            node_incremental = 'grn',
+            scope_incremental = 'grc',
+            node_decremental = 'grm',
+          },
+        },
       })
     end,
   },
