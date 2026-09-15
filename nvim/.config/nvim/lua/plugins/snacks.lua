@@ -62,6 +62,19 @@ local init_picker = function ()
   make_keybind(fs, Snacks.picker.search_history)
 end
 
+local function gz_preview(ctx)
+  local item = ctx.item
+  local file = item and item.file
+  if file and file:match("%.gz$") then
+    ctx.preview:reset()
+    ctx.preview:set_lines(vim.fn.systemlist({ "zcat", file }))
+    ctx.preview:highlight({ ft = "log" })
+    if item.pos then ctx.preview:loc() end
+    return
+  end
+  return Snacks.picker.preview.file(ctx)
+end
+
 return {
   "folke/snacks.nvim",
   priority = 1000,
@@ -77,7 +90,17 @@ return {
     explorer = { enabled = false },
     indent = { enabled = false },
     input = { enabled = false },
-    picker = { enabled = true, main = { file = false , current = true}, sources = { smart = { filter = { cwd = true }, }} },
+    picker = {
+      enabled = true,
+      main = { file = false , current = true},
+      sources = {
+        smart = { filter = { cwd = true }, },
+        grep = {
+          args = { "--color=never", "--line-number", "--column", "--smart-case", "--search-zip", },
+          preview = gz_preview,
+        },
+      },
+    },
     notifier = { enabled = false },
     quickfile = { enabled = true },
     scope = { enabled = false },
