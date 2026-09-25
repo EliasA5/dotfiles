@@ -41,4 +41,16 @@ customCommands:
     description: "Update submodules"
     loadingText: "Updating Submodules..."
     output: log
+  - key: X
+    description: "Copy/paste commits across repos"
+    commandMenu:
+    - key: c
+      command: 'git format-patch --stdout {{.SelectedCommitRange.From}}^..{{.SelectedCommitRange.To}} | copy_osc52'
+      context: commits, subCommits
+      description: "Copy selected commits to clipboard"
+    - key: v
+      command: 'tmux refresh-client -l; sleep 0.2; tmux save-buffer - | git am'
+      context: "commits"
+      description: "Paste selected commits from clipboard"
+
 promptToReturnFromSubprocess: false
